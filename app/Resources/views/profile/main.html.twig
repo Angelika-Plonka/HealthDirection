@@ -14,6 +14,9 @@
     <p><a href="#">Sprawdz swoje wymiary</a></p>
     <p><a href="{{ path('measurements')}}">Dodaj swoje wymiary</a></p>
 
+    <h3>Chcesz poznać użytkowników z Twojego miasta?<a href="{{ path('city')}}">Kliknij tutaj</a></h3>
+
+
     {#<div>#}
         {#{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}#}
             {#profile{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |#}

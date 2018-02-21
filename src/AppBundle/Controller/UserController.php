@@ -105,9 +105,9 @@ class UserController extends Controller
         $data = $request->request->get('form');
         $errorMsg = FALSE;
 
-//        echo '<pre>';
-//        var_dump($data);
-//        echo '</pre>';
+        echo '<pre>';
+        var_dump($data);
+        echo '</pre>';
         if ($request->getMethod() === 'POST') {
 
             if ($data['id'] === NULL || trim($data['id']) === '') {
@@ -142,34 +142,20 @@ class UserController extends Controller
         ));
     }
 
-        /**
-         * @Route("/addCity", name="city");
-         */
-        public function addCityAction(Request $request)
-        {
-            $page = "addCity";
-            $username = $this->getUser();
-            $user = $this->getUser();
-            if (!is_object($user) || !$user instanceof UserInterface) {
-                throw new AccessDeniedException('This user does not have access to this section.');
-            }
-            $form = $this->createFormBuilder()
-                ->add('miasto', TextType::class)
-                ->add('spotkanie', ChoiceType::class, array(
-                    'choices' => array('TAK' => true, 'NIE' => false)
-                ))
-                ->add('Wyślij', SubmitType::class)
-                ->getForm();
+}
 
-            $formView = $form->createView();
-        return $this->render('profile/addCity.html.twig', array(
-            'form' => $formView,
-            'page' => $page,
-            'username' => $username
-        ));
 
-        }
-    }
+
+
+//            $form = $this->createFormBuilder()
+//                ->add('miasto', TextType::class)
+//                ->add('spotkanie', ChoiceType::class, array(
+//                    'choices' => array('TAK' => true, 'NIE' => false)
+//                ))
+//                ->add('Wyślij', SubmitType::class)
+//                ->getForm();
+//            $formView = $form->createView();
+
 
 //        /**
 //         * @Route("/account", name="account");

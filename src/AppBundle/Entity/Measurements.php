@@ -104,7 +104,7 @@ class Measurements
      *
      * @var User
      *
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="entry")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="measurement")
      *
      */
 
@@ -375,17 +375,14 @@ class Measurements
      *
      * @param $person
      *
-     * @return this
+     * @return $this
      */
-
     public function setPerson(User $person) {
 
         $this->person = $person;
 
         return $this;
-
     }
-
 
     /**
      * Get person

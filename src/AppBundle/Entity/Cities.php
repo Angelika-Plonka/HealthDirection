@@ -24,9 +24,16 @@ class Cities
     /**
      * @var string
      *
-     * @ORM\Column(name="city", type="string", length=50)
+     * @ORM\Column(name="city", type="string", length=50, nullable = false)
      */
     private $city;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="voivodeship", type="string", length=50, nullable = false)
+     */
+    private $voivodeship;
 
     /**
      * @var bool
@@ -34,6 +41,25 @@ class Cities
      * @ORM\Column(name="eagerToMeet", type="boolean")
      */
     private $eagerToMeet;
+
+    /**
+     *
+     * @var User
+     *
+     * @ORM\OneToOne(targetEntity="User", inversedBy="region")
+     *
+     */
+
+    private $user;
+
+//    /**
+//     *
+//     * @var User
+//     *
+//     * @ORM\OneToOne(targetEntity="User", inversedBy="meeting")
+//     *
+//     */
+//    private $client;
 
 
     /**
@@ -71,6 +97,30 @@ class Cities
     }
 
     /**
+     * Set voivodeship
+     *
+     * @param string $voivodeship
+     *
+     * @return Cities
+     */
+    public function setVoivodeship($voivodeship)
+    {
+        $this->voivodeship = $voivodeship;
+
+        return $this;
+    }
+
+    /**
+     * Get voivodeship
+     *
+     * @return string
+     */
+    public function getVoivodeship()
+    {
+        return $this->voivodeship;
+    }
+
+    /**
      * Set eagerToMeet
      *
      * @param boolean $eagerToMeet
@@ -92,6 +142,31 @@ class Cities
     public function getEagerToMeet()
     {
         return $this->eagerToMeet;
+    }
+
+    /**
+     * Set user
+     *
+     * @param $user
+     *
+     * @return $this
+     */
+
+    public function setUser(User $user) {
+
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }
 

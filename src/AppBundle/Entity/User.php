@@ -19,25 +19,30 @@ class User extends BaseUser
      */
     protected $id;
 
-//    public function __construct()
-//    {
-//        parent::__construct();
-//        // your own logic
-//    }
-
     /**
      *
      * @var Measurements|ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="Measurements", mappedBy="entry")
+     * @ORM\OneToMany(targetEntity="Measurements", mappedBy="person")
      *
      */
-
     private $measurement;
+
+
+    /**
+     *
+     * @var Cities|ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="Cities", mappedBy="user")
+     *
+     */
+    private $region;
+
 
     public function __construct() {
         parent::__construct();
         $this->measurement = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->region = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 }
