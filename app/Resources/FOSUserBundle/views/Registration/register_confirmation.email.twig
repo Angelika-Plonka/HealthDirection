@@ -1,0 +1,16 @@
+{% block subject %} Potwierdzenie rejestracji {% endblock %}
+{% block body_html %}
+    <html>
+    <head>
+    </head>
+
+    <body>
+    Aby potwierdzić rejestrację wejdź na stronę:
+    <a href="{{confirmationUrl}}"> {{confirmationUrl}} </a>
+    </body>
+    </html>
+{% endblock %}
+{% block body_text %}
+    Aby potwierdzić rejestrację wejdź na stronę:
+    {{confirmationUrl}}
+{% endblock %}

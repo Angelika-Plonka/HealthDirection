@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=latin-ext" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap-3.3.7/dist/css/bootstrap.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}"/>
+        <script src="{{ asset('jquery-3.3.1.min.js') }}"></script>
+        <script src="{{ asset('bootstrap-3.3.7/dist/js/bootstrap.js') }}"></script>
+    </head>
+        <body {% if page == 'homepage' %}
+            class="mainBackground"
+        {% elseif page == 'account' %}
+            class="main"
+        {% elseif page == 'addMeasurements' %}
+            class="backgroundForm"
+        {% elseif page == 'addCity' %}
+            class="addCity"
+
+                {% endif %} >
+        {% block body %}
+
+
+            {#<div class="collapse navbar-collapse" id="navbar">#}
+                {#<ul class="nav navbar-nav navbar-right">#}
+                    {#{% if app.user %}#}
+                        {#<li class="{% if app.request.attributes.get('_route') == 'fos_user_profile_show' %}list-group-item-info{% endif %}">#}
+                            {#<a href="{{ url('fos_user_profile_show') }}" data-toggle="tooltip" data-placement="bottom"#}
+                               {#title="{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}">My Acconut</a>#}
+                        {#</li>#}
+                        {#<li>#}
+                            {#<a href="{{ url('fos_user_security_logout') }}">Logout</a>#}
+                        {#</li>#}
+                    {#{% else %}#}
+                        {#<li class="{% if app.request.attributes.get('_route') == 'fos_user_security_login' %}active{% endif %}">#}
+                            {#<a href="{{ url('fos_user_security_login') }}">Login</a>#}
+                        {#</li>#}
+                        {#<li class="list-group-item-info {% if app.request.attributes.get('_route') == 'fos_user_registration_register' %}active{% endif %}">#}
+                            {#<a href="{{ url('fos_user_registration_register') }}">Register</a>#}
+                        {#</li>#}
+                    {#{% endif %}#}
+                {#</ul>#}
+            {#</div>#}
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+
+    </body>
+</html>

@@ -1,0 +1,80 @@
+.backgroundImage {
+    background: black url("../pictures/background.jpg") no-repeat center/cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.backgroundForm {
+    background: black url("../pictures/diet.jpeg") no-repeat center/cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.addCity {
+    background: black url("../pictures/friends.jpg") no-repeat center/cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.mark{
+    background: rgba(255, 255, 255, 0.55);
+    width: 40vw;
+}
+
+.lighter{
+    background: rgba(255, 255, 255, 0.45);
+}
+
+/*#form_biodra{*/
+    /*color: red;*/
+/*}*/
+
+.mainBackground {
+    height: 100vh;
+    width: 100%;
+    color: white;
+
+    background: rgba(7,84,69,1);
+    background: -moz-linear-gradient(top, rgba(7,84,69,1) 0%, rgba(7,84,69,1) 16%, rgba(34,99,86,1) 65%, rgba(51,113,100,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(7,84,69,1)), color-stop(16%, rgba(7,84,69,1)), color-stop(65%, rgba(34,99,86,1)), color-stop(100%, rgba(51,113,100,1)));
+    background: -webkit-linear-gradient(top, rgba(7,84,69,1) 0%, rgba(7,84,69,1) 16%, rgba(34,99,86,1) 65%, rgba(51,113,100,1) 100%);
+    background: -o-linear-gradient(top, rgba(7,84,69,1) 0%, rgba(7,84,69,1) 16%, rgba(34,99,86,1) 65%, rgba(51,113,100,1) 100%);
+    background: -ms-linear-gradient(top, rgba(7,84,69,1) 0%, rgba(7,84,69,1) 16%, rgba(34,99,86,1) 65%, rgba(51,113,100,1) 100%);
+    background: linear-gradient(to bottom, rgba(7,84,69,1) 0%, rgba(7,84,69,1) 16%, rgba(34,99,86,1) 65%, rgba(51,113,100,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#075445', endColorstr='#337164', GradientType=0 );
+}
+
+
+
+h1{
+    font-family: "Dancing Script", cursive;
+    font-size: 50px;
+    font-weight: 700;
+}
+/*rgba(255, 255, 255, 0.25);*/
+
+.main {
+    /*background: black url("../pictures/background1.jpg") no-repeat center/cover;*/
+    height: 100vh;
+    /*height: 100%;*/
+    width: 100%;
+    background: rgba(212,228,239,1);
+    background: -moz-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(212,228,239,1)), color-stop(90%, rgba(134,174,204,1)), color-stop(100%, rgba(134,174,204,1)));
+    background: -webkit-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
+    background: -o-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
+    background: -ms-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
+    background: linear-gradient(to right, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#86aecc', GradientType=1 );
+}
+
+ .eternity-form {
+     padding: 15vh 5vh 5vw 5vw;
+     max-width: 50vw;
+ }
+
+
+/*.width-min-300px {*/
+    /*width: 100%;*/
+    /*max-width: 300px;*/
+/*}*/

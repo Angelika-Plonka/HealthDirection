@@ -1,0 +1,17 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{#{%  extends "FOSUserBundle:views:layout.html.twig" %}#}
+{#{%  extends "layout.html.twig" %}#}
+
+{% block body %}
+{#<body class="main">#}
+<div class="main">
+    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+    {#<p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>#}
+    <p><a href="#">Twoja dieta</a></p>
+
+    <p><a href="#">Sprawdz swoje wymiary</a></p>
+    <p><a href="#">Aktualizuj swoje wymiary</a></p>
+</div>
+{#</body>#}
+
+{% endblock %}

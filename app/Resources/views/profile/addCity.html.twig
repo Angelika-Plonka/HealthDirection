@@ -1,0 +1,38 @@
+{%  extends "base.html.twig" %}
+
+{% block body %}
+
+    <div>
+        <div>
+        <h1> {{ username }}, wyszukaj znajomych w Twojej okolicy!</h1>
+
+            <form method="POST" class="mark">
+                <h3>Wpisz swoje miasto lub pobierz lokalizację</h3><br>
+                <div class="row">
+                    <label>Twoje miasto</label><br>
+                    <input type="text" name="city" placeholder="nazwa miasto">
+                </div><br><br>
+                <div id="checkLocation">
+                    <span id="location">Pobierz swoją lokalizację</span><br>
+                    <p id="coordinates"></p>
+                    <button id="check" onclick="getLocation()">KLIK</button>
+                </div>
+                <div class="row">
+                    <label>Chcesz dołączyć do lokalnej grupy treningowej?</label><br>
+                    <select name="meet">
+                        <option value="true">TAK</option>
+                        <option value="false">NIE</option>
+                    </select>
+                </div><br><br>
+
+                <button type="submit" class="btn btn-primary">Wyślij</button>
+            </form>
+
+            {#{{ form(form) }}#}
+        </div>
+        <script src="{{ asset('js/app.js') }}"></script>
+    </div>
+
+
+
+{% endblock %}

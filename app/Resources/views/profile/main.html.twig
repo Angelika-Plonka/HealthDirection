@@ -1,0 +1,31 @@
+{%  extends "base.html.twig" %}
+
+{% block body %}
+{#<div class="main">#}
+<div>
+    <h1>Panel użytkownika</h1>
+        <a href="{{ path('fos_user_security_logout') }}">Wyloguj</a>
+
+    <p><a href="{{ path('fos_user_change_password')}}">Zmień hasło</a></p>
+
+    <h3>Witaj {{ username }}!</h3>
+    <p><a href="#">Twoja dieta</a></p>
+
+    <p><a href="#">Sprawdz swoje wymiary</a></p>
+    <p><a href="{{ path('measurements')}}">Dodaj swoje wymiary</a></p>
+
+    {#<div>#}
+        {#{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}#}
+            {#profile{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |#}
+            {#<a href="{{ path('fos_user_security_logout') }}">#}
+                {#{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}#}
+            {#</a>#}
+        {#{% else %}#}
+            {#<a href="{{ path('fos_user_registration_register') }}">Zarejestruj się!</a>#}
+        {#{% endif %}#}
+    {#</div>#}
+
+</div>
+
+{% endblock %}
+

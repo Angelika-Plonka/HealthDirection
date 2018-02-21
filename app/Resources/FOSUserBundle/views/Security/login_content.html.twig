@@ -1,0 +1,84 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{#{% if error %}#}
+    {#<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+{#{% endif %}#}
+
+{#<form action="{{ path("fos_user_security_check") }}" method="post">#}
+    {#{% if csrf_token %}#}
+        {#<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />#}
+    {#{% endif %}#}
+
+    {#<label for="username">{{ 'security.login.username'|trans }}</label>#}
+    {#<input type="text" id="username" name="_username" value="{{ last_username }}" required="required" /><br><br>#}
+
+    {#<label for="password">{{ 'security.login.password'|trans }}</label>#}
+    {#<input type="password" id="password" name="_password" required="required" /><br><br>#}
+
+    {#<input type="checkbox" id="remember_me" name="_remember_me" value="on" />#}
+    {#<label for="remember_me">{{ 'security.login.remember_me'|trans }}</label><br><br>#}
+
+    {#<input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />#}
+{#</form>#}
+
+<div class="container eternity-form">
+    <div class="login-form-section">
+        <div class="login-content">
+            <form action="{{ path("fos_user_security_check") }}" method="post">
+                {% if csrf_token %}
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                {% endif %}
+                <div class="section-title">
+                    <h3>Zaloguj się na swoje konto</h3>
+                </div>
+                <div class="textbox-wrap">
+                    <div class="input-group">
+                        <span class="input-group-addon "><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <label for="username">{{ 'security.login.username'|trans }}</label>
+                        <input type="text" id="username" name="_username" value="{{ last_username }}"
+                               required="required" class="form-control" placeholder="Login" />
+
+                    </div>
+                </div>
+                <div class="textbox-wrap">
+                    <div class="input-group">
+                        <span class="input-group-addon "><i class="fa fa-key" aria-hidden="true"></i></span>
+                        <input type="password" id="password" name="_password" required="required" class="form-control " placeholder="{{ 'security.login.password'|trans }}"/>
+                    </div>
+                </div>
+                <div class="login-form-action clearfix">
+                    <div class="checkbox pull-left">
+                        <div class="custom-checkbox">
+                            <input type="checkbox" id="remember_me" name="_remember_me" value="on" checked />
+                        </div>
+                        <span class="checkbox-text pull-left">&nbsp;{{ 'security.login.remember_me'|trans }}</span>
+                    </div>
+                    {#<input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />#}
+                    <button type="submit" id="_submit" name="_submit" class="btn btn-success pull-right green-btn">ZALOGUJ SIĘ &nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                </div>
+            </form>
+        </div>
+
+        {% if error %}
+            <div class="login-form-links link1 text-danger">
+                <h4>Error</h4>
+                <p>
+                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                </p>
+            </div>
+        {% endif %}
+
+        <div class="login-form-links link1">
+            <h4 class="blue">Nie masz konta?</h4>
+            <span>Najwyższy czas to zmienić!</span>
+            <a href="{{ path('fos_user_registration_register') }}" class="blue">Kliknij tutaj</a>
+            <span>aby się zarejestrować</span>
+        </div><br><br>
+        <div class="login-form-links link2">
+            <h4 class="green">Zapomniałeś hasła?</h4>
+            <span>Bez obaw!</span>
+            <a href="{{ path('fos_user_resetting_request') }}" class="green">Kliknij tutaj</a>
+            <span>aby uzyskać nowe!</span>
+        </div>
+    </div>
+</div>
