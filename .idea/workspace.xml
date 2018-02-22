@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e39a67d1-fef6-4138-bb59-fef91f9f2a37" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/MeasurementsRepository.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/profile/addMeasurements.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/profile/addMeasurements.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/profile/main.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/profile/main.html.twig" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/profile/showMeasurementsHistory.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/profile/showMeasurementsHistory.html.twig" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/MeasurementsController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/MeasurementsController.php" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Measurements.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Measurements.php" />
@@ -23,19 +18,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MeasurementsController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MeasurementsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MeasurementsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="141" column="35" lean-forward="false" selection-start-line="141" selection-start-column="34" selection-end-line="141" selection-end-column="35" />
+            <state relative-caret-position="414">
+              <caret line="182" column="36" lean-forward="false" selection-start-line="182" selection-start-column="36" selection-end-line="182" selection-end-column="36" />
               <folding>
                 <element signature="e#40#99#0#PHP" expanded="true" />
-                <marker date="1519311205166" expanded="true" signature="4454:4712" ph="..." />
-                <marker date="1519311205166" expanded="true" signature="4460:4635" ph="..." />
-                <marker date="1519311205166" expanded="true" signature="4460:4705" ph="..." />
-                <marker date="1519311205166" expanded="true" signature="4823:4897" ph="..." />
-                <marker date="1519311205166" expanded="true" signature="4829:4886" ph="..." />
-                <marker date="1519311205166" expanded="true" signature="4829:4897" ph="..." />
+                <marker date="1519327782865" expanded="true" signature="4294:4635" ph="..." />
+                <marker date="1519327782865" expanded="true" signature="4300:4441" ph="..." />
+                <marker date="1519327782865" expanded="true" signature="4300:4557" ph="..." />
+                <marker date="1519327782865" expanded="true" signature="4300:4628" ph="..." />
+                <marker date="1519327782865" expanded="true" signature="4746:4820" ph="..." />
+                <marker date="1519327782865" expanded="true" signature="4752:4809" ph="..." />
+                <marker date="1519327782865" expanded="true" signature="4752:4820" ph="..." />
               </folding>
             </state>
           </provider>
@@ -44,8 +40,8 @@
       <file leaf-file-name="Measurements.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Measurements.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="387" column="11" lean-forward="false" selection-start-line="387" selection-start-column="11" selection-end-line="387" selection-end-column="22" />
+            <state relative-caret-position="47">
+              <caret line="369" column="46" lean-forward="false" selection-start-line="369" selection-start-column="20" selection-end-line="369" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -54,18 +50,18 @@
       <file leaf-file-name="CitiesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CitiesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-126">
+            <state relative-caret-position="26">
               <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showMeasurementsHistory.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="showMeasurementsHistory.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/profile/showMeasurementsHistory.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="988">
-              <caret line="50" column="14" lean-forward="false" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+            <state relative-caret-position="312">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -74,7 +70,7 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
+            <state relative-caret-position="910">
               <caret line="47" column="39" lean-forward="false" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="39" />
               <folding />
             </state>
@@ -92,7 +88,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>remem</find>
       <find>userna</find>
       <find>twig</find>
       <find>activit</find>
@@ -121,6 +116,8 @@
       <find>dateAd</find>
       <find>per</find>
       <find>righ</find>
+      <find>activi</find>
+      <find>dail</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -163,13 +160,13 @@
         <option value="$PROJECT_DIR$/web/js/measurements.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/CitiesController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Measurements.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/profile/main.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/MeasurementsRepository.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/profile/addMeasurements.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/profile/showMeasurementsHistory.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Measurements.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/MeasurementsController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/profile/showMeasurementsHistory.html.twig" />
       </list>
     </option>
   </component>
@@ -244,8 +241,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -322,13 +319,6 @@
             <path>
               <item name="healthDirection" type="b2602c69:ProjectViewProjectNode" />
               <item name="healthDirection" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="healthDirection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="healthDirection" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -397,11 +387,12 @@
       <workItem from="1519235235623" duration="5278000" />
       <workItem from="1519263133676" duration="14584000" />
       <workItem from="1519287405609" duration="23140000" />
+      <workItem from="1519319660367" duration="7118000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189924000" />
+    <option name="totallyTimeSpent" value="197042000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
@@ -650,7 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="32" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -666,7 +656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -674,7 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -682,7 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -690,13 +677,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
+        <state relative-caret-position="910">
           <caret line="47" column="39" lean-forward="false" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="39" />
           <folding />
         </state>
@@ -712,7 +698,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CitiesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-126">
+        <state relative-caret-position="26">
           <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
           <folding />
         </state>
@@ -720,33 +706,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Measurements.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="387" column="11" lean-forward="false" selection-start-line="387" selection-start-column="11" selection-end-line="387" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/profile/showMeasurementsHistory.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
-          <caret line="50" column="14" lean-forward="false" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+        <state relative-caret-position="47">
+          <caret line="369" column="46" lean-forward="false" selection-start-line="369" selection-start-column="20" selection-end-line="369" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MeasurementsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="141" column="35" lean-forward="false" selection-start-line="141" selection-start-column="34" selection-end-line="141" selection-end-column="35" />
+        <state relative-caret-position="414">
+          <caret line="182" column="36" lean-forward="false" selection-start-line="182" selection-start-column="36" selection-end-line="182" selection-end-column="36" />
           <folding>
             <element signature="e#40#99#0#PHP" expanded="true" />
-            <marker date="1519311205166" expanded="true" signature="4454:4712" ph="..." />
-            <marker date="1519311205166" expanded="true" signature="4460:4635" ph="..." />
-            <marker date="1519311205166" expanded="true" signature="4460:4705" ph="..." />
-            <marker date="1519311205166" expanded="true" signature="4823:4897" ph="..." />
-            <marker date="1519311205166" expanded="true" signature="4829:4886" ph="..." />
-            <marker date="1519311205166" expanded="true" signature="4829:4897" ph="..." />
+            <marker date="1519327782865" expanded="true" signature="4294:4635" ph="..." />
+            <marker date="1519327782865" expanded="true" signature="4300:4441" ph="..." />
+            <marker date="1519327782865" expanded="true" signature="4300:4557" ph="..." />
+            <marker date="1519327782865" expanded="true" signature="4300:4628" ph="..." />
+            <marker date="1519327782865" expanded="true" signature="4746:4820" ph="..." />
+            <marker date="1519327782865" expanded="true" signature="4752:4809" ph="..." />
+            <marker date="1519327782865" expanded="true" signature="4752:4820" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/profile/showMeasurementsHistory.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

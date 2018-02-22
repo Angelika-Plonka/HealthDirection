@@ -35,7 +35,6 @@ class MeasurementsController extends Controller
         $addParameters = new Measurements();
         $entityManager = $this->getDoctrine()->getManager();
         $form = $this->createFormBuilder()
-//            >add('save', SubmitType::class, array('label' => 'Create Post'))
             ->add('waga', TextType::class, array('label' => 'Wpisz masę ciała [kg]'))
             ->add('wzrost', TextType::class, array('label' => 'Wpisz wzrost [cm]'))
             ->add('wiek', IntegerType::class, array('label' => 'Wpisz wiek'))
@@ -44,15 +43,14 @@ class MeasurementsController extends Controller
             ->add('talia', IntegerType::class, array('label' => 'Szerokość talii [cm]'))
             ->add('biceps', IntegerType::class, array('label' => 'Obwód bicepsa [cm]'))
             ->add('klata', IntegerType::class, array('label' => 'Obwód klatki piersiowej [cm]'))
-//            ->add('pas', IntegerType::class, array('label_attr' => array('class' => 'CUSTOM_LABEL_CLASS')))
             ->add('aktywnosc', ChoiceType::class, array(
                 'label' => 'Aktywność fizyczna',
                 'choices' => array(
-                    'aktywność fizyczna niska' => '1',
-                    'aktywność fizyczna umiarkowana' => '2',
-                    'aktywny tryb życia' => '3',
-                    'bardzo aktywny tryb życia' => '4',
-                    'wyczynowe uprawianie sportu' => '5',
+                    'niska - sporadyczna aktywność fizyczna' => '1.4',
+                    'aktywność fizyczna umiarkowana' => '1.75',
+                    'aktywny tryb życia' => '2',
+                    'bardzo aktywny tryb życia' => '2.2',
+                    'wyczynowe uprawianie sportu' => '2.4',
                 )
             ))
             ->add('plec', ChoiceType::class, array(
@@ -70,9 +68,9 @@ class MeasurementsController extends Controller
         $data = $request->request->get('form');
         $errorMsg = FALSE;
 
-        echo '<pre>';
-        var_dump($data);
-        echo '</pre>';
+//        echo '<pre>';
+//        var_dump($data);
+//        echo '</pre>';
         if ($request->getMethod() === 'POST') {
 
             if ($data['id'] === NULL || trim($data['id']) === '') {
@@ -98,10 +96,9 @@ class MeasurementsController extends Controller
 
                 $entityManager->persist($addParameters);
                 $entityManager->flush();
-                return new Response('<html><body>
-                    <h2>Twoje pomiary zostały zapisane poprawnie.</h2>
-                    <h4>Aby wyświetlić listę swoich pomiarów </h4>
-                    <span><a href="/showMeasurements">Kliknij tutaj</a></span>
+                return new Response('<html><body><h2>Twoje pomiary zostały zapisane poprawnie.</h2><br><br>
+                    <h4>Aby wyświetlić listę swoich pomiarów </h4><span><a href="/showMeasurements">Kliknij tutaj</a></span><br><br>
+                    <h4>Przejście do panelu użytkownika <a href="/account">Panel użytkownika</a></span></h4>
                     </body></html>');
 //                $this->redirectToRoute("showMeasurements");
 //                return new Response('<html><body><h2>Twoje pomiary zostały zapisane poprawnie.</h2></body></html>');
@@ -120,7 +117,6 @@ class MeasurementsController extends Controller
      */
     public function showMeasurementsHistoryAction(Request $request)
     {
-
         $page = "calculate";
         $user = $this->getUser();
         $userId = $user->getId();
@@ -132,12 +128,13 @@ class MeasurementsController extends Controller
         $hips = $User->getHips();
         $belly = $User->getBelly();
         $sex = $User->getSex();
+        $age = $User->getAge();
+        $activity = $User->getActivity();
 
         $newBmi = false;
         if($height !== 0 && $height !==null) {
             $newBmi = round(($weight) / (pow(($height/100), 2)), 2);
             $User->setBmi($newBmi);
-//            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($User);
             $entityManager->flush();
         }
@@ -146,7 +143,6 @@ class MeasurementsController extends Controller
         if($hips !== 0 && $hips !==null) {
             $newWHR = round(($waist / $hips), 2);
             $User->setWhr($newWHR);
-//            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($User);
             $entityManager->flush();
         }
@@ -160,30 +156,32 @@ class MeasurementsController extends Controller
                 $val3 = ($val1 - $val2 - 98.42);
                 $newFat1 = ($val3/$val4)*100;
                 $newFat = round($newFat1);
-
-
             }else{
                 $val3 = ($val1 - $val2 - 76.76);
                 $newFat1 = ($val3/$val4)*100;
                 $newFat = round($newFat1);
             }
             $User->setFat($newFat);
-            $entityManager->persist($user);
+            $entityManager->persist($User);
             $entityManager->flush();
         }
 
         $rightKG = false;
+        $dailyEnergyRequirements = false;
         if($sex !==null){
             if($sex == "male"){
                 $rightKG = ($height - 100 - (($height - 150) / 4));
+                $restingMetabolicRate = ((10 * $weight) + (6.25 * $height)-(5 * $age) + 5);
             }else{
                 $rightKG = ($height - 100 - (($height - 150) / 2));
+                $restingMetabolicRate = ((10 * $weight) + (6.25 * $height)-(5 * $age) - 161);
             }
+            $dailyEnergyRequirements = round(($restingMetabolicRate * $activity), 0);
             $User->setRightWeight($rightKG);
-            $entityManager->persist($user);
+            $User->setDailyEnergyRequirements($dailyEnergyRequirements);
+            $entityManager->persist($User);
             $entityManager->flush();
         }
-
 
         return $this->render('profile/showMeasurementsHistory.html.twig', array(
             'page' => $page,
@@ -196,7 +194,8 @@ class MeasurementsController extends Controller
             'whr' => $newWHR,
             'sex' => $sex,
             'fat' => $newFat,
-            'rightWeight' => $rightKG
+            'rightWeight' => $rightKG,
+            'dailyEnergy' => $dailyEnergyRequirements
         ));
     }
 

@@ -88,9 +88,9 @@ class Measurements
     private $bmi;
 
     /**
-     * @var int
+     * @var float
      *
-     * @ORM\Column(name="activity", type="integer", nullable=true)
+     * @ORM\Column(name="activity", type="float", nullable=true)
      */
     private $activity;
 
@@ -341,7 +341,7 @@ class Measurements
     /**
      * Set activity
      *
-     * @param integer $activity
+     * @param float $activity
      * @return Measurements
      */
     public function setActivity($activity)
@@ -354,7 +354,7 @@ class Measurements
     /**
      * Get activity
      *
-     * @return integer
+     * @return float
      */
     public function getActivity()
     {
