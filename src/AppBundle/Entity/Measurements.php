@@ -31,6 +31,13 @@ class Measurements
     private $weight;
 
     /**
+     * @var datetime
+     *
+     * @ORM\Column(name="date_added", type="datetime", options={"default"="CURRENT_TIMESTAMP"})
+     */
+    private $dateAdded;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="height", type="integer", nullable=true)

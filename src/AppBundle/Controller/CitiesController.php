@@ -31,7 +31,6 @@ class CitiesController extends Controller
 //            var_dump($data);
 //            echo '</pre>';
         $errorMsg = false;
-        $successMsg= false;
         if($request->get('clientId') !== NULL && $request->get('city') !== "" && $request->get('voivodeship') !== ""){
             $city= $request->get('city');
             $voivodeship= $request->get('voivodeship');
@@ -50,8 +49,8 @@ class CitiesController extends Controller
                 $location->setUser($User);
                 $entityManager->persist($location);
                 $entityManager->flush();
-                $successMsg = true;
                 return $this->redirectToRoute("showUsers");
+//                return new Response('<html><body>Twoje pomiary zostały zapisane poprawnie.</body></html>');
             }
         }
 
@@ -59,8 +58,7 @@ class CitiesController extends Controller
             'page' => $page,
             'username' => $username,
             'userId' => $userId,
-            'err' => $errorMsg,
-            'success' => $successMsg
+            'err' => $errorMsg
         ));
     }
     /**

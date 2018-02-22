@@ -4,12 +4,11 @@
 
     <div>
         <div>
-            {% if success %}
-                <h2 style="color: red;">Formularz wysłano poprawnie.</h2>
-                {#<span><a href="">Kliknij tutaj, aby </a></span>#}
+            {% if err %}
+                <h2 style="color: red;">{{ err }}</h2>
             {% endif %}
             <div class="logOut"><a href="{{ path('fos_user_security_logout') }}">Wyloguj</a></div>
-            <h1 class="change"> {{ username }}, wyszukaj znajomych w Twojej okolicy!</h1><br><br><br>
+            <h1 class="change"> {{ username }}, wyszukaj nowych ludzi w Twojej okolicy!</h1><br><br><br>
 
             <form method="POST" class="mark">
                 <h3>Wpisz swoje miasto lub pobierz lokalizację</h3><br>
@@ -46,14 +45,12 @@
                         <span id="voivodeshipVal"></span><input type="hidden" id="voivodeship" name="voivodeship" value="" disabled/>
                     </p><br>
                     <button id="check" onclick="getLocation(); return false;">KLIK</button>
-                        {#<h5>Jesteś w mieście: <span id="city"></span></h5>#}
-                        {#<h5>w województwie: <span id="voivodeship"></span></h5>#}
                 </div>
                 <div class="row">
                     <label>Chcesz dołączyć do lokalnej grupy treningowej?</label><br>
                     <select name="meet">
-                        <option value="true">TAK</option>
-                        <option value="false">NIE</option>
+                        <option value="1">TAK</option>
+                        <option value="0">NIE</option>
                     </select>
                 </div><br><br>
                 <input type="hidden" name="clientId" value="{{ userId }}"/>

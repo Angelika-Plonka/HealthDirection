@@ -7,6 +7,10 @@
             <h2 style="color: #FF0000;">{{ err }}</h2>
         {% endif %}
 
+        {{ form_label(form.pas, 'Obwod w pasie w centymetrach', {
+            'label_attr': {'class': 'CUSTOM_LABEL_CLASS'}
+        }) }}
+
         <div class="logOut"><a href="{{ path('fos_user_security_logout') }}">Wyloguj</a></div>
         <div class="lighter">
             <h2>Witaj {{ username }}</h2>
@@ -14,12 +18,8 @@
             <h4>Wypełnij formularz, aby bla bla bla...</h4>
             {{ form(form) }}
 
-            <h3>Chcesz poznać użytkowników z Twojego miasta?<a href="{{ path('city')}}">Kliknij tutaj</a></h3>
-
         </div>
 
     </div>
-
-    <script src="{{ asset('js/app.js') }}"></script>
 
 {%  endblock %}
