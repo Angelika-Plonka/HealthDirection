@@ -33,7 +33,7 @@ class Measurements
     /**
      * @var datetime
      *
-     * @ORM\Column(name="date_added", type="datetime", options={"default"="CURRENT_TIMESTAMP"})
+     * @ORM\Column(name="date_added", type="datetime", options={"default"="CURRENT_TIMESTAMP"}, nullable=true)
      */
     private $dateAdded;
 
@@ -101,12 +101,26 @@ class Measurements
      */
     private $dailyEnergyRequirements;
 
-//    /**
-//     * @var int
-//     *
-//     * @ORM\Column(name="bicep", type="integer", nullable=true)
-//     */
-//    private $bicep;
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="fat", type="float", nullable=true)
+     */
+    private $fat;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="bicep", type="integer", nullable=true)
+     */
+    private $bicep;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="chest", type="integer", nullable=true)
+     */
+    private $chest;
 
     /**
      * @var int
@@ -114,6 +128,13 @@ class Measurements
      * @ORM\Column(name="rightWeight", type="integer", nullable=true)
      */
     private $rightWeight;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="whr", type="float", nullable=true)
+     */
+    private $whr;
 
     /**
      *
@@ -430,5 +451,97 @@ class Measurements
     public function getDateAdded()
     {
         return $this->dateAdded;
+    }
+
+    /**
+     * Set fat
+     *
+     * @param float $fat
+     * @return Measurements
+     */
+    public function setFat($fat)
+    {
+        $this->fat = $fat;
+
+        return $this;
+    }
+
+    /**
+     * Get fat
+     *
+     * @return float
+     */
+    public function getFat()
+    {
+        return $this->fat;
+    }
+
+    /**
+     * Set bicep
+     *
+     * @param integer $bicep
+     * @return Measurements
+     */
+    public function setBicep($bicep)
+    {
+        $this->bicep = $bicep;
+
+        return $this;
+    }
+
+    /**
+     * Get bicep
+     *
+     * @return integer
+     */
+    public function getBicep()
+    {
+        return $this->bicep;
+    }
+
+    /**
+     * Set chest
+     *
+     * @param integer $chest
+     * @return Measurements
+     */
+    public function setChest($chest)
+    {
+        $this->chest = $chest;
+
+        return $this;
+    }
+
+    /**
+     * Get chest
+     *
+     * @return integer
+     */
+    public function getChest()
+    {
+        return $this->chest;
+    }
+
+    /**
+     * Set whr
+     *
+     * @param float $whr
+     * @return Measurements
+     */
+    public function setWhr($whr)
+    {
+        $this->whr = $whr;
+
+        return $this;
+    }
+
+    /**
+     * Get whr
+     *
+     * @return float
+     */
+    public function getWhr()
+    {
+        return $this->whr;
     }
 }

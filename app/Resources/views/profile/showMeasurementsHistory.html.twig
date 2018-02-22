@@ -1,0 +1,51 @@
+{%  extends "base.html.twig" %}
+
+{% block body %}
+
+    <div class="logOut"><a href="{{ path('fos_user_security_logout') }}">Wyloguj</a></div>
+    <span><a href="{{ path('account') }}">Panel użytkownika</a></span>
+
+    <div>Twoje wymiary:</div>
+    <div>
+        <p>Wzrost:{{ height }}</p>
+        <p>Waga:{{ weight }}</p>
+        <p>Talia:{{ waist }}</p>
+        <p>Biodra:{{ hips }}</p>
+        <p>Brzuch:{{ belly }}</p>
+    </div>
+
+    <p>Twoje BMI wynosi: {{ bmi }}</p>
+
+    <p>Należna masa ciała na podstawie wzoru Lorentza {{ rightWeight }}</p>
+
+    {% if  bmi > 25 %}
+        <p>Współczynnik WHR stanowi wskaźnik dystrybucji tkanki tłuszczowej w ciele człowieka i jest wyznacznikiem określającym rodzaj sylwetki ciała (sylwetka w kształcie gruszki bądź jabłka) oraz typ otyłości (otyłość brzuszna bądź pośladkowo-udowa). Nie stosuje się go u kobiet w ciąży!.</p>
+        <span>Twój współczynnik WHR wynosi: {{ whr }}</span>
+        {% if sex == "male" %}
+            {% if whr >= "1,00" %}
+            <span>otyłość androidalna - brzuszna (typu 'jabłko') </span>
+                {% else %}
+            <span>otyłość gynoidalną - pośladkowo-udowa (typu 'gruszka')</span>
+                {%  endif %}
+            {%  else %}
+                {% if whr >= "0,80" %}
+                    <span>otyłość androidalna - brzuszna (typu 'jabłko') </span>
+                {% else %}
+                    <span>otyłość gynoidalną - pośladkowo-udowa (typu 'gruszka')</span>
+            {%  endif %}
+        {% endif %}
+    {%  endif %}
+
+    {#{% if sex == "female"%}#}
+
+    {#{%  endif %}#}
+    <br><br><div>Procentowa zawartość tkanki tłuszczowej w Twoim organizmie: </div>
+    <div><p>{{ fat }} *</p></div>
+
+    <p><a href="https://www.trener.pl/trening/atrakcyjnosc-fizyczna-a-poziom-tkanki-tluszczowej/">Tutaj</a></p>
+    <p>*błąd może może wynosić do kilku punktów procentowych (z reguły +/- ~3 %).
+        Wskaźnik ten jest niewiarygodny dla: osób o dużej muskulaturze, sportowców,
+        kobiet przy nadziei (w ciąży), dorastającej młodzieży, osób starszych.</p>
+
+
+{% endblock %}

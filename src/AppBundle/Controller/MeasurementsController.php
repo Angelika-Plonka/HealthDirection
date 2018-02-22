@@ -25,7 +25,6 @@ class MeasurementsController extends Controller
     public function addMeasurementsAction(Request $request)
     {
         $page = "addMeasurements";
-        $user = $this->getUser();
         $username = $this->getUser();
         $user = $this->getUser();
         if (!is_object($user) || !$user instanceof UserInterface) {
@@ -36,15 +35,18 @@ class MeasurementsController extends Controller
         $addParameters = new Measurements();
         $entityManager = $this->getDoctrine()->getManager();
         $form = $this->createFormBuilder()
-            ->add('waga', TextType::class)
-            ->add('wzrost', TextType::class)
-            ->add('wiek', IntegerType::class)
-            ->add('pas', IntegerType::class)
-            ->add('biodra', IntegerType::class)
-            ->add('talia', IntegerType::class)
-            ->add('biceps', IntegerType::class)
+//            >add('save', SubmitType::class, array('label' => 'Create Post'))
+            ->add('waga', TextType::class, array('label' => 'Wpisz masę ciała [kg]'))
+            ->add('wzrost', TextType::class, array('label' => 'Wpisz wzrost [cm]'))
+            ->add('wiek', IntegerType::class, array('label' => 'Wpisz wiek'))
+            ->add('pas', IntegerType::class, array('label' => 'Obwód w pasie [cm]'))
+            ->add('biodra', IntegerType::class, array('label' => 'Obwód bioder [cm]'))
+            ->add('talia', IntegerType::class, array('label' => 'Szerokość talii [cm]'))
+            ->add('biceps', IntegerType::class, array('label' => 'Obwód bicepsa [cm]'))
+            ->add('klata', IntegerType::class, array('label' => 'Obwód klatki piersiowej [cm]'))
 //            ->add('pas', IntegerType::class, array('label_attr' => array('class' => 'CUSTOM_LABEL_CLASS')))
             ->add('aktywnosc', ChoiceType::class, array(
+                'label' => 'Aktywność fizyczna',
                 'choices' => array(
                     'aktywność fizyczna niska' => '1',
                     'aktywność fizyczna umiarkowana' => '2',
@@ -54,6 +56,7 @@ class MeasurementsController extends Controller
                 )
             ))
             ->add('plec', ChoiceType::class, array(
+                'label' => 'Wybierz płeć',
                 'choices' => array('Kobieta' => 'female', 'Mężczyzna' => 'male')
             ))
             ->add('id', HiddenType::class, array(
@@ -67,9 +70,9 @@ class MeasurementsController extends Controller
         $data = $request->request->get('form');
         $errorMsg = FALSE;
 
-//        echo '<pre>';
-//        var_dump($data);
-//        echo '</pre>';
+        echo '<pre>';
+        var_dump($data);
+        echo '</pre>';
         if ($request->getMethod() === 'POST') {
 
             if ($data['id'] === NULL || trim($data['id']) === '') {
@@ -85,29 +88,25 @@ class MeasurementsController extends Controller
                 $addParameters->setActivity($data['aktywnosc']);
                 $addParameters->setBelly($data['pas']);
                 $addParameters->setHeight($data['wzrost']);
-//                $addParameters->
+                $addParameters->setBicep($data['biceps']);
                 $addParameters->setSex($data['plec']);
                 $addParameters->setWaist($data['talia']);
                 $addParameters->setWeight($data['waga']);
                 $addParameters->setHips($data['biodra']);
+                $addParameters->setChest($data['klata']);
                 $addParameters->setPerson($Person);
 
                 $entityManager->persist($addParameters);
                 $entityManager->flush();
-//                return new Response('<html><body>
-//                    <h2>Twoje pomiary zostały zapisane poprawnie.</h2>
-//                    <h4>Aby wyświetlić listę swoich pomiarów </h4>
-//                    <span><a href="{{ path('showMeasurements') }}">Kliknij tutaj</a></span>
-//                    </body></html>');
-
-                $this->redirectToRoute("showMeasurements");
-                return new Response('<html><body><h2>Twoje pomiary zostały zapisane poprawnie.</h2></body></html>');
-
-
+                return new Response('<html><body>
+                    <h2>Twoje pomiary zostały zapisane poprawnie.</h2>
+                    <h4>Aby wyświetlić listę swoich pomiarów </h4>
+                    <span><a href="/showMeasurements">Kliknij tutaj</a></span>
+                    </body></html>');
+//                $this->redirectToRoute("showMeasurements");
+//                return new Response('<html><body><h2>Twoje pomiary zostały zapisane poprawnie.</h2></body></html>');
             }
-
         }
-
         return $this->render('profile/addMeasurements.html.twig', array(
             'username' => $username,
             'form' => $formView,
@@ -122,28 +121,69 @@ class MeasurementsController extends Controller
     public function showMeasurementsHistoryAction(Request $request)
     {
 
-        $page = "caulculate";
+        $page = "calculate";
         $user = $this->getUser();
-        $weight = $user->getWeight();
-        $height = $user->getHeight();
-        $waist = $user->getWaist();
-        $hips = $user->getHips();
-        $belly = $user->getBelly();
+        $userId = $user->getId();
+        $entityManager = $this->getDoctrine()->getManager();
+        $User = $entityManager->getRepository(Measurements::class)->findOneBy(['person' => $userId]);
+        $weight = $User->getWeight();
+        $height = $User->getHeight();
+        $waist = $User->getWaist();
+        $hips = $User->getHips();
+        $belly = $User->getBelly();
+        $sex = $User->getSex();
 
-        $newBmi = ($weight) / (pow($height, 2));
-        $user->setBmi($newBmi);
-        $entityManager = $this->getDoctrine()->getManager();  // dodanie bmi do bazy danych
-        $entityManager->persist($user);
-        $entityManager->flush();
+        $newBmi = false;
+        if($height !== 0 && $height !==null) {
+            $newBmi = round(($weight) / (pow(($height/100), 2)), 2);
+            $User->setBmi($newBmi);
+//            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($User);
+            $entityManager->flush();
+        }
 
-//        private function calculateFat(){
-//
-//        }
+        $newWHR = false;
+        if($hips !== 0 && $hips !==null) {
+            $newWHR = round(($waist / $hips), 2);
+            $User->setWhr($newWHR);
+//            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($User);
+            $entityManager->flush();
+        }
+
         $newFat= false;
-        $user->setFat($newFat);
-        $entityManager = $this->getDoctrine()->getManager();  // dodanie fat do bazy danych
-        $entityManager->persist($user);
-        $entityManager->flush();
+        if($waist !== 0 && $waist !==null && $weight !== 0 && $weight !==null){
+            $val1 = ((4.15 * $waist)/2.54);
+            $val2 = (0.082 * $weight * 2.2);
+            $val4 = ($weight * 2.2);
+            if($sex == "male"){
+                $val3 = ($val1 - $val2 - 98.42);
+                $newFat1 = ($val3/$val4)*100;
+                $newFat = round($newFat1);
+
+
+            }else{
+                $val3 = ($val1 - $val2 - 76.76);
+                $newFat1 = ($val3/$val4)*100;
+                $newFat = round($newFat1);
+            }
+            $User->setFat($newFat);
+            $entityManager->persist($user);
+            $entityManager->flush();
+        }
+
+        $rightKG = false;
+        if($sex !==null){
+            if($sex == "male"){
+                $rightKG = ($height - 100 - (($height - 150) / 4));
+            }else{
+                $rightKG = ($height - 100 - (($height - 150) / 2));
+            }
+            $User->setRightWeight($rightKG);
+            $entityManager->persist($user);
+            $entityManager->flush();
+        }
+
 
         return $this->render('profile/showMeasurementsHistory.html.twig', array(
             'page' => $page,
@@ -153,7 +193,10 @@ class MeasurementsController extends Controller
             'hips' => $hips,
             'belly' => $belly,
             'bmi' =>$newBmi,
-            'fat' => $newFat
+            'whr' => $newWHR,
+            'sex' => $sex,
+            'fat' => $newFat,
+            'rightWeight' => $rightKG
         ));
     }
 
