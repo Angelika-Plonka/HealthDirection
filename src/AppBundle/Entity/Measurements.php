@@ -37,6 +37,7 @@ class Measurements
      */
     private $dateAdded;
 
+
     /**
      * @var int
      *
@@ -99,6 +100,13 @@ class Measurements
      * @ORM\Column(name="dailyEnergyRequirements", type="integer", nullable=true)
      */
     private $dailyEnergyRequirements;
+
+//    /**
+//     * @var int
+//     *
+//     * @ORM\Column(name="bicep", type="integer", nullable=true)
+//     */
+//    private $bicep;
 
     /**
      * @var int
@@ -399,5 +407,28 @@ class Measurements
     public function getPerson()
     {
         return $this->person;
+    }
+
+    /**
+     * Set dateAdded
+     *
+     * @param datetime $dateAdded
+     * @return Measurements
+     */
+    public function setDateAdded($dateAdded)
+    {
+        $this->dateAdded = $dateAdded;
+
+        return $this;
+    }
+
+    /**
+     * Get dateAdded
+     *
+     * @return datetime
+     */
+    public function getDateAdded()
+    {
+        return $this->dateAdded;
     }
 }

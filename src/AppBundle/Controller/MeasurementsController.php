@@ -42,6 +42,7 @@ class MeasurementsController extends Controller
             ->add('pas', IntegerType::class)
             ->add('biodra', IntegerType::class)
             ->add('talia', IntegerType::class)
+            ->add('biceps', IntegerType::class)
 //            ->add('pas', IntegerType::class, array('label_attr' => array('class' => 'CUSTOM_LABEL_CLASS')))
             ->add('aktywnosc', ChoiceType::class, array(
                 'choices' => array(
@@ -66,9 +67,9 @@ class MeasurementsController extends Controller
         $data = $request->request->get('form');
         $errorMsg = FALSE;
 
-        echo '<pre>';
-        var_dump($data);
-        echo '</pre>';
+//        echo '<pre>';
+//        var_dump($data);
+//        echo '</pre>';
         if ($request->getMethod() === 'POST') {
 
             if ($data['id'] === NULL || trim($data['id']) === '') {
@@ -84,21 +85,27 @@ class MeasurementsController extends Controller
                 $addParameters->setActivity($data['aktywnosc']);
                 $addParameters->setBelly($data['pas']);
                 $addParameters->setHeight($data['wzrost']);
+//                $addParameters->
                 $addParameters->setSex($data['plec']);
-//                $addParameters->setWaist($data['talia']);
+                $addParameters->setWaist($data['talia']);
                 $addParameters->setWeight($data['waga']);
-//                $addParameters->setHips($data['biodra']);
+                $addParameters->setHips($data['biodra']);
                 $addParameters->setPerson($Person);
 
                 $entityManager->persist($addParameters);
                 $entityManager->flush();
-                return new Response('<html><body>
-                    <h2>Twoje pomiary zostały zapisane poprawnie.</h2>
-                    <h4>Aby wyświetlić listę swoich pomiarów </h4>
-                    <span><a href="{{ path('showMeasurements') }}">Kliknij tutaj</a></span>
-                    </body></html>');
+//                return new Response('<html><body>
+//                    <h2>Twoje pomiary zostały zapisane poprawnie.</h2>
+//                    <h4>Aby wyświetlić listę swoich pomiarów </h4>
+//                    <span><a href="{{ path('showMeasurements') }}">Kliknij tutaj</a></span>
+//                    </body></html>');
+
+                $this->redirectToRoute("showMeasurements");
+                return new Response('<html><body><h2>Twoje pomiary zostały zapisane poprawnie.</h2></body></html>');
+
+
             }
-//            showMeasurementsHistory.html.twig
+
         }
 
         return $this->render('profile/addMeasurements.html.twig', array(
@@ -114,15 +121,40 @@ class MeasurementsController extends Controller
      */
     public function showMeasurementsHistoryAction(Request $request)
     {
-//        $user = $this->getUser();
-        $username = $this->getUser();
-        $page = "account";
+
+        $page = "caulculate";
+        $user = $this->getUser();
+        $weight = $user->getWeight();
+        $height = $user->getHeight();
+        $waist = $user->getWaist();
+        $hips = $user->getHips();
+        $belly = $user->getBelly();
+
+        $newBmi = ($weight) / (pow($height, 2));
+        $user->setBmi($newBmi);
+        $entityManager = $this->getDoctrine()->getManager();  // dodanie bmi do bazy danych
+        $entityManager->persist($user);
+        $entityManager->flush();
+
+//        private function calculateFat(){
+//
+//        }
+        $newFat= false;
+        $user->setFat($newFat);
+        $entityManager = $this->getDoctrine()->getManager();  // dodanie fat do bazy danych
+        $entityManager->persist($user);
+        $entityManager->flush();
 
         return $this->render('profile/showMeasurementsHistory.html.twig', array(
-            'username' => $username,
-            'page' => $page
+            'page' => $page,
+            'weight' => $weight,
+            'height' => $height,
+            'waist' => $waist,
+            'hips' => $hips,
+            'belly' => $belly,
+            'bmi' =>$newBmi,
+            'fat' => $newFat
         ));
     }
 
-}
 }

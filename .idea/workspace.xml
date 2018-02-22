@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e39a67d1-fef6-4138-bb59-fef91f9f2a37" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/profile/showMeasurementsHistory.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/MeasurementsController.php" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/profile/addCity.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/profile/addCity.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/profile/addMeasurements.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/profile/addMeasurements.html.twig" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/CitiesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/CitiesController.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/MeasurementsController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/MeasurementsController.php" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Measurements.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Measurements.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,24 +20,28 @@
       <file leaf-file-name="MeasurementsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MeasurementsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="99" column="13" lean-forward="true" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="13" />
+            <state relative-caret-position="344">
+              <caret line="138" column="42" lean-forward="true" selection-start-line="138" selection-start-column="42" selection-end-line="138" selection-end-column="42" />
               <folding>
                 <element signature="e#40#99#0#PHP" expanded="true" />
-                <marker date="1519277190199" expanded="true" signature="3784:4055" ph="..." />
-                <marker date="1519277190199" expanded="true" signature="3790:3972" ph="..." />
-                <marker date="1519277190199" expanded="true" signature="3790:3974" ph="..." />
-                <marker date="1519277190199" expanded="true" signature="3790:4048" ph="..." />
+                <marker date="1519283555204" expanded="true" signature="3871:4150" ph="..." />
+                <marker date="1519283555204" expanded="true" signature="3877:4065" ph="..." />
+                <marker date="1519283555204" expanded="true" signature="3877:4067" ph="..." />
+                <marker date="1519283555204" expanded="true" signature="3877:4143" ph="..." />
+                <marker date="1519283555204" expanded="true" signature="4258:4333" ph="..." />
+                <marker date="1519283555204" expanded="true" signature="4258:4334" ph="..." />
+                <marker date="1519283555204" expanded="true" signature="4264:4321" ph="..." />
+                <marker date="1519283555204" expanded="true" signature="4264:4333" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
+      <file leaf-file-name="CitiesController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CitiesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="46" column="7" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+            <state relative-caret-position="261">
+              <caret line="51" column="23" lean-forward="false" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -59,31 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/profile/main.html.twig">
+      <file leaf-file-name="addCity.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/profile/addCity.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" column="70" lean-forward="false" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Measurements.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Measurements.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1686">
-              <caret line="147" column="5" lean-forward="true" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="32" column="51" lean-forward="false" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
+            <state relative-caret-position="1534">
+              <caret line="59" column="56" lean-forward="true" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -119,6 +97,9 @@
       <find>person</find>
       <find>man</find>
       <find>$dateAdded</find>
+      <find>dateAdded</find>
+      <find>getHeight</find>
+      <find>entity</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,11 +140,11 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Cities.php" />
         <option value="$PROJECT_DIR$/web/js/app.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/profile/addCity.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Measurements.php" />
         <option value="$PROJECT_DIR$/web/js/measurements.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/profile/addMeasurements.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/CitiesController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Measurements.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/MeasurementsController.php" />
       </list>
     </option>
@@ -383,16 +364,15 @@
       <workItem from="1519179871581" duration="14581000" />
       <workItem from="1519201057791" duration="22964000" />
       <workItem from="1519235235623" duration="5278000" />
-      <workItem from="1519263133676" duration="9728000" />
+      <workItem from="1519263133676" duration="14584000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161928000" />
+    <option name="totallyTimeSpent" value="166784000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18524212" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -664,42 +644,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/profile/addCity.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="59" column="8" lean-forward="false" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Measurements.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1686">
-          <caret line="147" column="5" lean-forward="true" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/measurements.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CitiesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="53" column="13" lean-forward="true" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="46" column="7" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -728,16 +676,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Measurements.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="175" column="29" lean-forward="false" selection-start-line="175" selection-start-column="20" selection-end-line="175" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/profile/addCity.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1534">
+          <caret line="59" column="56" lean-forward="true" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CitiesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="51" column="23" lean-forward="false" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="82" column="10" lean-forward="true" selection-start-line="82" selection-start-column="10" selection-end-line="82" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MeasurementsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="99" column="13" lean-forward="true" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="13" />
+        <state relative-caret-position="344">
+          <caret line="138" column="42" lean-forward="true" selection-start-line="138" selection-start-column="42" selection-end-line="138" selection-end-column="42" />
           <folding>
             <element signature="e#40#99#0#PHP" expanded="true" />
-            <marker date="1519277190199" expanded="true" signature="3784:4055" ph="..." />
-            <marker date="1519277190199" expanded="true" signature="3790:3972" ph="..." />
-            <marker date="1519277190199" expanded="true" signature="3790:3974" ph="..." />
-            <marker date="1519277190199" expanded="true" signature="3790:4048" ph="..." />
+            <marker date="1519283555204" expanded="true" signature="3871:4150" ph="..." />
+            <marker date="1519283555204" expanded="true" signature="3877:4065" ph="..." />
+            <marker date="1519283555204" expanded="true" signature="3877:4067" ph="..." />
+            <marker date="1519283555204" expanded="true" signature="3877:4143" ph="..." />
+            <marker date="1519283555204" expanded="true" signature="4258:4333" ph="..." />
+            <marker date="1519283555204" expanded="true" signature="4258:4334" ph="..." />
+            <marker date="1519283555204" expanded="true" signature="4264:4321" ph="..." />
+            <marker date="1519283555204" expanded="true" signature="4264:4333" ph="..." />
           </folding>
         </state>
       </provider>
