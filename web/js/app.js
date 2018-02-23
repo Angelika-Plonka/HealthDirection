@@ -37,5 +37,4 @@ function getLocation() {
     else {
         $("#coordinates").html = "Geolokalizacja nie jest wspierana przez Twoją przeglądarkę";
     }
-
 }

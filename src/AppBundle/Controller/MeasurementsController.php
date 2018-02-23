@@ -100,8 +100,6 @@ class MeasurementsController extends Controller
                     <h4>Aby wyświetlić listę swoich pomiarów <a href="/showMeasurements"><button>Kliknij tutaj</button></a></h4><br><br>
                     <h4>Przejście do panelu użytkownika <a href="/account"><button>Kliknij tutaj</button></a></h4>
                     </body></html>');
-//                $this->redirectToRoute("showMeasurements");
-//                return new Response('<html><body><h2>Twoje pomiary zostały zapisane poprawnie.</h2></body></html>');
             }
         }
         return $this->render('profile/addMeasurements.html.twig', array(
@@ -124,7 +122,7 @@ class MeasurementsController extends Controller
         }
         $userId = $user->getId();
         $entityManager = $this->getDoctrine()->getManager();
-        $User = $entityManager->getRepository(Measurements::class)->findOneBy(['person' => $userId]);
+        $User = $entityManager->getRepository(Measurements::class)->findBy(['person' => $userId], ['dateAdded' => 'DESC'])[0];
         if($User == null){
             return new Response('<html><body><h3>Nie dodałeś jeszcze wymiarów</h3><br><br>
                     <h4>Aby to zrobić<a href="/account/addMeasurements"><button>Kliknij tutaj</button></a></h4><br><br>

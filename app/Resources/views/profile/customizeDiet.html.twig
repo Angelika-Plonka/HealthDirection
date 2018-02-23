@@ -1,1 +1,27 @@
-{#customizeDiet.html.twig#}
+{%  extends "base.html.twig" %}
+
+{% block body %}
+    <div>
+        <h3>Pobierz przepisy zgodnie z Twoim zapotrzebowaniem energetycznym!</h3>
+
+        <form method="POST">
+            <label>Ile kalorii ma mieć Twój posiłek? Wpisz tutaj:</label>
+            <input type="number" id="calories" name="calories"/><br><br>
+            <label>Wpisz kluczowy składnik przepisu (po angielsku) np. chicken</label>
+            <input type="text" id="key" name="key"/><br><br>
+            <label>Posiłek może zawierać alkohol?</label>
+            <select name="alcohol" id="alcohol">
+                <option value="alcohol-free">NIE</option>
+                <option value="0">TAK</option>
+            </select>
+            <input type="submit" id="send" value="Pobierz przepis">
+            {#<button id="check">KLIK</button>#}
+        </form>
+
+
+
+
+    <script src="{{ asset('js/diet.js') }}"></script>
+    </div>
+
+{% endblock %}

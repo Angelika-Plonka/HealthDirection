@@ -89,24 +89,68 @@ class CitiesController extends Controller
             1 => "TAK"
         ];
         $userCity = $City->getCity();
-        $friendsCity = $entityManager->getRepository(Cities::class)->findBy(['city' => $userCity]);
+//        $friendsCity = $entityManager->getRepository(Cities::class)->findBy(['city' => $userCity]);
 
-        $query = $entityManager->createQuery(
-            'SELECT city.city, user.username
-                  FROM AppBundle:Cities city
-                  LEFT JOIN AppBundle:User user WITH (city.user = user.id)
-                  WHERE city.city > :city'
-            )->setParameter('city', $userCity);
+        $db = $this->getDoctrine()->getConnection();
+        $query ="
+            SELECT cities.city, fos_user.username, cities.eagerToMeet
+            FROM cities
+            LEFT JOIN fos_user ON cities.user_id = fos_user.id
+            WHERE cities.city = '{$userCity}'
+        ";
 
-        $name = $query->getResult();
-
-
+        $list = $db->query($query)->fetchAll();
+//        var_dump($list);
 
         return $this->render('profile/showUsersInCity.html.twig', array(
             'page' => $page,
-            'friendsInCity' => $friendsCity,
             'eager' => $eagerToMeet,
-            'names' => $name
+            'names' => $list
+        ));
+    }
+
+    /**
+     * @Route("/showUsersInRegion", name="showUsersInRegion");
+     */
+    public function showUsersInRegionAction(Request $request)
+    {
+        $page = "friends";
+        $user = $this->getUser();
+        if (!is_object($user) || !$user instanceof UserInterface) {
+            throw new AccessDeniedException('This user does not have access to this section.');
+        }
+        $userId = $user->getId();
+        $entityManager = $this->getDoctrine()->getManager();
+        $City = $entityManager->getRepository(Cities::class)->findOneBy(['user' => $userId]);
+
+        if($City == null){
+            return new Response('<html><body><h3>Nie dodałeś jeszcze miasta i województwa</h3><br><br>
+                    <h4>Aby to zrobić<a href="/addCity"><button>Kliknij tutaj</button></a></h4><br><br>
+                    <h4>Przejście do panelu użytkownika <a href="/account"><button>Klik</button></a></h4>
+                    </body></html>');
+        }
+
+        $eagerToMeet = [
+            0 => "NIE",
+            1 => "TAK"
+        ];
+        $userVoivodeship = $City->getVoivodeship();
+
+        $db = $this->getDoctrine()->getConnection();
+        $query ="
+            SELECT cities.city, cities.voivodeship, fos_user.username, cities.eagerToMeet
+            FROM cities
+            LEFT JOIN fos_user ON cities.user_id = fos_user.id
+            WHERE cities.voivodeship = '{$userVoivodeship}'
+        ";
+
+        $list = $db->query($query)->fetchAll();
+        var_dump($list);
+
+        return $this->render('profile/showUsersInRegion.html.twig', array(
+            'page' => $page,
+            'eager' => $eagerToMeet,
+            'names' => $list
         ));
 
     }
