@@ -49,15 +49,37 @@ class UserController extends Controller
      */
     public function accountAction(Request $request)
     {
-//        $user = $this->getUser();
-        $username = $this->getUser();
+        $user = $this->getUser();
         $page = "account";
+        if (!is_object($user) || !$user instanceof UserInterface) {
+            throw new AccessDeniedException('This user does not have access to this section.');
+        }
 
         return $this->render('profile/main.html.twig', array(
+            'username' => $user,
+            'page' => $page
+        ));
+    }
+    //customizeDiet.html.twig
+
+    /**
+     * @Route("/customizeDiet", name="customizeDiet");
+     */
+    public function dietAction(Request $request)
+    {
+        $user = $this->getUser();
+        $username = $this->getUser();
+        $page = "diet";
+        if (!is_object($user) || !$user instanceof UserInterface) {
+            throw new AccessDeniedException('This user does not have access to this section.');
+        }
+
+        return $this->render('profile/customizeDiet.html.twig', array(
             'username' => $username,
             'page' => $page
         ));
     }
+
 
 }
 

@@ -97,8 +97,8 @@ class MeasurementsController extends Controller
                 $entityManager->persist($addParameters);
                 $entityManager->flush();
                 return new Response('<html><body><h2>Twoje pomiary zostały zapisane poprawnie.</h2><br><br>
-                    <h4>Aby wyświetlić listę swoich pomiarów </h4><span><a href="/showMeasurements">Kliknij tutaj</a></span><br><br>
-                    <h4>Przejście do panelu użytkownika <a href="/account">Panel użytkownika</a></span></h4>
+                    <h4>Aby wyświetlić listę swoich pomiarów <a href="/showMeasurements"><button>Kliknij tutaj</button></a></h4><br><br>
+                    <h4>Przejście do panelu użytkownika <a href="/account"><button>Kliknij tutaj</button></a></h4>
                     </body></html>');
 //                $this->redirectToRoute("showMeasurements");
 //                return new Response('<html><body><h2>Twoje pomiary zostały zapisane poprawnie.</h2></body></html>');
@@ -119,9 +119,18 @@ class MeasurementsController extends Controller
     {
         $page = "calculate";
         $user = $this->getUser();
+        if (!is_object($user) || !$user instanceof UserInterface) {
+            throw new AccessDeniedException('This user does not have access to this section.');
+        }
         $userId = $user->getId();
         $entityManager = $this->getDoctrine()->getManager();
         $User = $entityManager->getRepository(Measurements::class)->findOneBy(['person' => $userId]);
+        if($User == null){
+            return new Response('<html><body><h3>Nie dodałeś jeszcze wymiarów</h3><br><br>
+                    <h4>Aby to zrobić<a href="/account/addMeasurements"><button>Kliknij tutaj</button></a></h4><br><br>
+                    <h4>Przejście do panelu użytkownika <a href="/account"><button>Klik</button></a></h4>
+                    </body></html>');
+        }
         $weight = $User->getWeight();
         $height = $User->getHeight();
         $waist = $User->getWaist();

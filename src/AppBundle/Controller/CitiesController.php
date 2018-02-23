@@ -10,6 +10,8 @@ use AppBundle\Entity\Cities;
 use AppBundle\Entity\Measurements;
 use FOS\UserBundle\Model\UserInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Symfony\Component\HttpFoundation\Response;
+use Doctrine\ORM\Query;
 
 class CitiesController extends Controller
 {
@@ -62,13 +64,49 @@ class CitiesController extends Controller
         ));
     }
     /**
-     * @Route("/showUsers", name="showUsers");
+     * @Route("/showUsersInCity", name="showUsersInCity");
      */
-    public function aboutAction(Request $request)
+    public function showUsersInCityAction(Request $request)
     {
         $page = "friends";
-        return $this->render('profile/showUsers.html.twig', array(
-            'page' => $page
+        $user = $this->getUser();
+        if (!is_object($user) || !$user instanceof UserInterface) {
+            throw new AccessDeniedException('This user does not have access to this section.');
+        }
+        $userId = $user->getId();
+        $entityManager = $this->getDoctrine()->getManager();
+        $City = $entityManager->getRepository(Cities::class)->findOneBy(['user' => $userId]);
+
+        if($City == null){
+            return new Response('<html><body><h3>Nie dodałeś jeszcze miasta</h3><br><br>
+                    <h4>Aby to zrobić<a href="/addCity"><button>Kliknij tutaj</button></a></h4><br><br>
+                    <h4>Przejście do panelu użytkownika <a href="/account"><button>Klik</button></a></h4>
+                    </body></html>');
+        }
+
+        $eagerToMeet = [
+            0 => "NIE",
+            1 => "TAK"
+        ];
+        $userCity = $City->getCity();
+        $friendsCity = $entityManager->getRepository(Cities::class)->findBy(['city' => $userCity]);
+
+        $query = $entityManager->createQuery(
+            'SELECT city.city, user.username
+                  FROM AppBundle:Cities city
+                  LEFT JOIN AppBundle:User user WITH (city.user = user.id)
+                  WHERE city.city > :city'
+            )->setParameter('city', $userCity);
+
+        $name = $query->getResult();
+
+
+
+        return $this->render('profile/showUsersInCity.html.twig', array(
+            'page' => $page,
+            'friendsInCity' => $friendsCity,
+            'eager' => $eagerToMeet,
+            'names' => $name
         ));
 
     }
