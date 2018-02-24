@@ -72,21 +72,21 @@ class UserController extends Controller
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
-        $data = $request->request;
-        echo '<pre>';
-        var_dump($data);
-        echo '</pre>';
-
-        $calories = $request->request->get('calories');
-        $alcohol = $request->request->get('alcohol');
-        $keyWord = $request->request->get('key');
+//        $data = $request->request;
+//        echo '<pre>';
+//        var_dump($data);
+//        echo '</pre>';
+//
+//        $calories = $request->request->get('calories');
+//        $alcohol = $request->request->get('alcohol');
+//        $keyWord = $request->request->get('key');
 
         return $this->render('profile/customizeDiet.html.twig', array(
             'username' => $username,
-            'page' => $page,
-            'calories' =>$calories,
-            'alcohol' => $alcohol,
-            'key' => $keyWord
+            'page' => $page
+//            'calories' =>$calories,
+//            'alcohol' => $alcohol,
+//            'key' => $keyWord
 
         ));
     }

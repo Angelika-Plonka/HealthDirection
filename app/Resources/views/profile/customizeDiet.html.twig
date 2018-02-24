@@ -2,11 +2,14 @@
 
 {% block body %}
     <div>
-        <h3>Pobierz przepisy zgodnie z Twoim zapotrzebowaniem energetycznym!</h3>
-
+        <h3>Pobierz przepisy zgodne z Twoim zapotrzebowaniem energetycznym!</h3>
+        <h4>W naszej bazie jest ponad 2 miliony przepisów! Każdy znajdzie coś dla siebie!</h4>
+//uwzględnij pola wymagane i opcjonalne
         <form method="POST">
-            <label>Ile kalorii ma mieć Twój posiłek? Wpisz tutaj:</label>
-            <input type="number" id="calories" name="calories"/><br><br>
+            <label>Ile minimalnie kalorii ma mieć Twoje danie? Wpisz tutaj:</label>
+            <input type="number" id="caloriesMin" name="caloriesMin"/><br><br>
+            <label>Ile maksymalnie kalorii ma mieć Twoje danie? Wpisz tutaj:</label>
+            <input type="number" id="caloriesMax" name="caloriesMax"/><br><br>
             <label>Wpisz kluczowy składnik przepisu (po angielsku) np. chicken</label>
             <input type="text" id="key" name="key"/><br><br>
             <label>Posiłek może zawierać alkohol?</label>
@@ -15,8 +18,15 @@
                 <option value="0">TAK</option>
             </select>
             <input type="submit" id="send" value="Pobierz przepis">
-            {#<button id="check">KLIK</button>#}
         </form>
+
+        <div class="loadedRecipe">
+            <div id="imageRecipe">
+
+            </div>
+            <h3></h3>
+        </div>
+
 
 
 

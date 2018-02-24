@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e39a67d1-fef6-4138-bb59-fef91f9f2a37" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/profile/showUsersInRegion.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/diet.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/profile/addCity.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/profile/addCity.html.twig" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/profile/customizeDiet.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/profile/customizeDiet.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/profile/main.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/profile/main.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/profile/showUsersInCity.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/profile/showUsersInCity.html.twig" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/CitiesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/CitiesController.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/MeasurementsController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/MeasurementsController.php" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" />
-      <change beforePath="$PROJECT_DIR$/web/js/app.js" afterPath="$PROJECT_DIR$/web/js/app.js" />
+      <change beforePath="$PROJECT_DIR$/web/js/diet.js" afterPath="$PROJECT_DIR$/web/js/diet.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,26 +22,9 @@
       <file leaf-file-name="customizeDiet.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/profile/customizeDiet.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+            <state relative-caret-position="423">
+              <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="32" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MeasurementsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MeasurementsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1430">
-              <caret line="67" column="47" lean-forward="false" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
-              <folding>
-                <marker date="1519378496564" expanded="true" signature="4294:4645" ph="..." />
-                <marker date="1519378496564" expanded="true" signature="4300:4430" ph="..." />
-                <marker date="1519378496564" expanded="true" signature="4300:4561" ph="..." />
-                <marker date="1519378496564" expanded="true" signature="4300:4638" ph="..." />
-                <marker date="1519378496564" expanded="true" signature="5571:5883" ph="..." />
-                <marker date="1519378496564" expanded="true" signature="5577:5876" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -56,10 +32,10 @@
       <file leaf-file-name="diet.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/diet.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+            <state relative-caret-position="258">
+              <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
               <folding>
-                <marker date="1519397896733" expanded="true" signature="1238:1252" ph="..." />
+                <marker date="1519482104052" expanded="true" signature="1431:1445" ph="..." />
               </folding>
             </state>
           </provider>
@@ -76,7 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>register</find>
       <find>profile</find>
       <find>manag</find>
       <find>locat</find>
@@ -106,6 +81,7 @@
       <find>48</find>
       <find>use</find>
       <find>voivode</find>
+      <find>getRe</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -212,7 +188,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="75" />
     <option name="y" value="16" />
     <option name="width" value="1291" />
@@ -235,7 +211,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -322,6 +297,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -375,18 +351,19 @@
       <workItem from="1519319660367" duration="7118000" />
       <workItem from="1519346845139" duration="17808000" />
       <workItem from="1519377456396" duration="18668000" />
-      <workItem from="1519403236127" duration="532000" />
+      <workItem from="1519403236127" duration="1270000" />
+      <workItem from="1519450105346" duration="20232000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="234050000" />
+    <option name="totallyTimeSpent" value="255020000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="75" y="16" width="1303" height="780" extended-state="7" />
+    <frame x="75" y="16" width="1303" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19677171" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.009992314" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -491,13 +468,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="57" column="22" lean-forward="false" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/about.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -707,27 +677,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/about.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="88" column="29" lean-forward="false" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
+        <state relative-caret-position="248">
+          <caret line="78" column="2" lean-forward="false" selection-start-line="78" selection-start-column="2" selection-end-line="78" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/profile/customizeDiet.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        <state relative-caret-position="423">
+          <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/diet.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+        <state relative-caret-position="258">
+          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
           <folding>
-            <marker date="1519397896733" expanded="true" signature="1238:1252" ph="..." />
+            <marker date="1519482104052" expanded="true" signature="1431:1445" ph="..." />
           </folding>
         </state>
       </provider>
