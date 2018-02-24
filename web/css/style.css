@@ -33,6 +33,14 @@
     padding: 30px;
 }
 
+#loadedRecipe{
+    width: 800px;
+    height: 1000px;
+}
+/*#imageRecipe{*/
+    /*width: 800px;*/
+    /*height: 700px;*/
+/*}*/
 .logOut{
     background: black;
     color: white;
