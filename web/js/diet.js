@@ -5,15 +5,19 @@ $(function(){
         var caloriesMin = $("#caloriesMin").val();
         var caloriesMax = $("#caloriesMax").val();
         var alcohol = parseInt($("#alcohol").val());
+        var dairy = parseInt($("#dairy").val());
+        var gluten = parseInt($("#gluten").val());
+        var kosher = parseInt($("#kosher").val());
+        var paleo = parseInt($("#paleo").val());
+        var vegan = parseInt($("#vegan").val());
+        var vegetarian = parseInt($("#vegetarian").val());
+        var noSugar = parseInt($("#noSugar").val());
 
-        var urlRecipe = "https://api.edamam.com/search?q=" + keyWord + "&app_id=f0b118cd&app_key=0ce50a18e86f75250d8d11775e120379&calories=gte%20" + caloriesMin + ",%20lte%20" + caloriesMax + (alcohol ? "&health=" + alcohol : '');
+        var urlRecipe = "https://api.edamam.com/search?q=" + keyWord + "&app_id=f0b118cd&app_key=0ce50a18e86f75250d8d11775e120379&calories=gte%20" + caloriesMin + ",%20lte%20" + caloriesMax + (alcohol ? "&health=" + alcohol : '') + (dairy ? "&health=" + dairy : '') + (kosher ? "&health=" + kosher : '') + (gluten ? "&health=" + gluten : '') + (paleo ? "&health=" + paleo : '') + (vegan ? "&health=" + vegan : '') + (vegetarian ? "&health=" + vegetarian : '') + (noSugar ? "&health=" + noSugar : '');
 
         // var check = (Boolean(alcohol) ? "&health=" + alcohol : '');
         //var check = (alcohol ? "&health=" + alcohol : '');
-        var urlRecipeBezKalorii = "https://api.edamam.com/search?q=" + keyWord + "&app_id=f0b118cd&app_key=0ce50a18e86f75250d8d11775e120379&from=0&to=3";
-        console.log(urlRecipe);
-        // var moj = "https://api.edamam.com/search?q=broccoli&app_id=f0b118cd&app_key=0ce50a18e86f75250d8d11775e120379&calories=gte%20300,%20lte%20800";
-        // var examp = "https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=3&calories=gte%20591,%20lte%20722&health=alcohol-free";
+
         $.ajax({
             url: urlRecipe
         }).done(function (results) {
@@ -28,7 +32,7 @@ $(function(){
             var randomNumber = Math.floor(Math.random()* numberHits);
             console.log(randomNumber);
             var title = results.hits[randomNumber].recipe.label;
-            $('<h3>' + "Tytuł przepisu: " + title + '</h3>').appendTo('#loadedRecipe');
+            $('<h3>' + title + '</h3>').appendTo('#loadedRecipe');
 
             var href = results.hits[randomNumber].recipe.image;
             $('<img style="display: none;" src="' + href + '" /><br>').appendTo('#loadedRecipe').fadeIn(1000);
@@ -59,7 +63,5 @@ $(function(){
         getRecipe();
 
     });
-
-
 
 });

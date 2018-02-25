@@ -37,45 +37,7 @@
         <h4>Jeśli chcesz nawiązać kontakt, kliknij w login użytkownika</h4>
     </div>
 
-
 {% endblock %}
-
-
-{#<div>#}
-    {#<h3>Lista użytkowników z Twojego miasta</h3>#}
-    {#<h5>Jeśli chcesz nawiązać kontakt, kliknij w login użytkownika</h5>#}
-    {#<table>#}
-        {#{% for friend in friendsInCity %}#}
-            {#{%  set counter = (counter | default(0)) + 1 %}#}
-            {#{%  if friend.eagerToMeet == 0 %}#}
-                {#<tr>#}
-                    {#<th>NR</th>#}
-                    {#<th>LOGIN</th>#}
-                    {#<th>CHĘTNY NA SPOTKANIE</th>#}
-                {#</tr>#}
-                {#<tr>#}
-                    {#<td>{{ counter }}: {{ friend.id }}</td>#}
-                    {#<td></td>#}
-                    {#<td>{{ eager[0] }}</td>#}
-                {#</tr>#}
-
-            {#{% else %}#}
-                {#<tr>#}
-                    {#<th>NR</th>#}
-                    {#<th>LOGIN</th>#}
-                    {#<th>CHĘTNY NA SPOTKANIE</th>#}
-                {#</tr>#}
-                {#<tr>#}
-                    {#<td>{{ counter }}</td>#}
-                    {#<td></td>#}
-                    {#<td>{{ eager[1] }}</td>#}
-                {#</tr>#}
-            {#{% endif %}#}
-        {#{% endfor %}#}
-    {#</table>#}
-{#</div>#}
-
-
 
 
 

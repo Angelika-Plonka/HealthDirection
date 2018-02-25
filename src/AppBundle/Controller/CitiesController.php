@@ -28,10 +28,8 @@ class CitiesController extends Controller
             throw new AccessDeniedException('This user does not have access to this section.');
         }
         $userId = $user->getId();
-        $data = $request->request;
-//            echo '<pre>';
-//            var_dump($data);
-//            echo '</pre>';
+//        $data = $request->request;
+
         $errorMsg = false;
         if($request->get('clientId') !== NULL && $request->get('city') !== "" && $request->get('voivodeship') !== ""){
             $city= $request->get('city');
@@ -145,15 +143,13 @@ class CitiesController extends Controller
         ";
 
         $list = $db->query($query)->fetchAll();
-        var_dump($list);
+//        var_dump($list);
 
         return $this->render('profile/showUsersInRegion.html.twig', array(
             'page' => $page,
             'eager' => $eagerToMeet,
             'names' => $list
         ));
-
     }
-
 
 }
