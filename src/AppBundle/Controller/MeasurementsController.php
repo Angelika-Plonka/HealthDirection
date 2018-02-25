@@ -35,15 +35,15 @@ class MeasurementsController extends Controller
         $addParameters = new Measurements();
         $entityManager = $this->getDoctrine()->getManager();
         $form = $this->createFormBuilder()
-            ->add('waga', TextType::class, array('label' => 'Wpisz masę ciała [kg]'))
-            ->add('wzrost', TextType::class, array('label' => 'Wpisz wzrost [cm]'))
-            ->add('wiek', IntegerType::class, array('label' => 'Wpisz wiek'))
-            ->add('pas', IntegerType::class, array('label' => 'Obwód w pasie [cm]'))
-            ->add('biodra', IntegerType::class, array('label' => 'Obwód bioder [cm]'))
-            ->add('talia', IntegerType::class, array('label' => 'Szerokość talii [cm]'))
-            ->add('biceps', IntegerType::class, array('label' => 'Obwód bicepsa [cm]'))
-            ->add('klata', IntegerType::class, array('label' => 'Obwód klatki piersiowej [cm]'))
-            ->add('aktywnosc', ChoiceType::class, array(
+            ->add('weight', TextType::class, array('label' => 'Wpisz masę ciała [kg]'))
+            ->add('height', TextType::class, array('label' => 'Wpisz wzrost [cm]'))
+            ->add('age', IntegerType::class, array('label' => 'Wpisz wiek'))
+            ->add('belly', IntegerType::class, array('label' => 'Obwód w pasie [cm]'))
+            ->add('hips', IntegerType::class, array('label' => 'Obwód bioder [cm]'))
+            ->add('waist', IntegerType::class, array('label' => 'Szerokość talii [cm]'))
+            ->add('bicep', IntegerType::class, array('label' => 'Obwód bicepsa [cm]'))
+            ->add('chest', IntegerType::class, array('label' => 'Obwód klatki piersiowej [cm]'))
+            ->add('activity', ChoiceType::class, array(
                 'label' => 'Aktywność fizyczna',
                 'choices' => array(
                     'niska - sporadyczna aktywność fizyczna' => '1.4',
@@ -53,7 +53,7 @@ class MeasurementsController extends Controller
                     'wyczynowe uprawianie sportu' => '2.4',
                 )
             ))
-            ->add('plec', ChoiceType::class, array(
+            ->add('sex', ChoiceType::class, array(
                 'label' => 'Wybierz płeć',
                 'choices' => array('Kobieta' => 'female', 'Mężczyzna' => 'male')
             ))
@@ -68,9 +68,6 @@ class MeasurementsController extends Controller
         $data = $request->request->get('form');
         $errorMsg = FALSE;
 
-//        echo '<pre>';
-//        var_dump($data);
-//        echo '</pre>';
         if ($request->getMethod() === 'POST') {
 
             if ($data['id'] === NULL || trim($data['id']) === '') {
@@ -82,22 +79,22 @@ class MeasurementsController extends Controller
                 $errorMsg = 'Niestety nie udało sie wysłać formularza.';
             }
             else{
-                $addParameters->setAge($data['wiek']);
-                $addParameters->setActivity($data['aktywnosc']);
-                $addParameters->setBelly($data['pas']);
-                $addParameters->setHeight($data['wzrost']);
-                $addParameters->setBicep($data['biceps']);
-                $addParameters->setSex($data['plec']);
-                $addParameters->setWaist($data['talia']);
-                $addParameters->setWeight($data['waga']);
-                $addParameters->setHips($data['biodra']);
-                $addParameters->setChest($data['klata']);
+                $addParameters->setAge($data['age']);
+                $addParameters->setActivity($data['activity']);
+                $addParameters->setBelly($data['belly']);
+                $addParameters->setHeight($data['height']);
+                $addParameters->setBicep($data['bicep']);
+                $addParameters->setSex($data['sex']);
+                $addParameters->setWaist($data['waist']);
+                $addParameters->setWeight($data['weight']);
+                $addParameters->setHips($data['hips']);
+                $addParameters->setChest($data['chest']);
                 $addParameters->setPerson($Person);
 
                 $entityManager->persist($addParameters);
                 $entityManager->flush();
                 return new Response('<html><body><h2>Twoje pomiary zostały zapisane poprawnie.</h2><br><br>
-                    <h4>Aby wyświetlić listę swoich pomiarów <a href="/showMeasurements"><button>Kliknij tutaj</button></a></h4><br><br>
+                    <h4>Aby wyświetlić wyniki swoich pomiarów <a href="/showMeasurements"><button>Kliknij tutaj</button></a></h4><br><br>
                     <h4>Przejście do panelu użytkownika <a href="/account"><button>Kliknij tutaj</button></a></h4>
                     </body></html>');
             }

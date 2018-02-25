@@ -31,9 +31,9 @@ class User extends BaseUser
 
     /**
      *
-     * @var Cities|ArrayCollection
+     * @var Informations|ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="Cities", mappedBy="user")
+     * @ORM\OneToOne(targetEntity="Informations", mappedBy="user")
      *
      */
     private $region;

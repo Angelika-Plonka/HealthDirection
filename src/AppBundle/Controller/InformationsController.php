@@ -6,14 +6,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\User;
-use AppBundle\Entity\Cities;
+use AppBundle\Entity\Informations;
 use AppBundle\Entity\Measurements;
 use FOS\UserBundle\Model\UserInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\Query;
 
-class CitiesController extends Controller
+class InformationsController extends Controller
 {
 
     /**
@@ -42,15 +42,14 @@ class CitiesController extends Controller
                 $errorMsg = 'Niestety nie udało sie wysłać formularza.';
             }
             else{
-                $location = new Cities();
+                $location = new Informations();
                 $location->setCity($city);
                 $location->setVoivodeship($voivodeship);
-                $location->setEagerToMeet($meet);
+                $location->setEagerToWorkout($meet);
                 $location->setUser($User);
                 $entityManager->persist($location);
                 $entityManager->flush();
-                return $this->redirectToRoute("showUsers");
-//                return new Response('<html><body>Twoje pomiary zostały zapisane poprawnie.</body></html>');
+                return $this->redirectToRoute("showUsersInRegion");
             }
         }
 
@@ -73,9 +72,9 @@ class CitiesController extends Controller
         }
         $userId = $user->getId();
         $entityManager = $this->getDoctrine()->getManager();
-        $City = $entityManager->getRepository(Cities::class)->findOneBy(['user' => $userId]);
+        $Informations = $entityManager->getRepository(Informations::class)->findOneBy(['user' => $userId]);
 
-        if($City == null){
+        if($Informations == null){
             return new Response('<html><body><h3>Nie dodałeś jeszcze miasta</h3><br><br>
                     <h4>Aby to zrobić<a href="/addCity"><button>Kliknij tutaj</button></a></h4><br><br>
                     <h4>Przejście do panelu użytkownika <a href="/account"><button>Klik</button></a></h4>
@@ -86,15 +85,15 @@ class CitiesController extends Controller
             0 => "NIE",
             1 => "TAK"
         ];
-        $userCity = $City->getCity();
-//        $friendsCity = $entityManager->getRepository(Cities::class)->findBy(['city' => $userCity]);
+        $userCity = $Informations->getCity();
+//        $friendsCity = $entityManager->getRepository(Informations::class)->findBy(['city' => $userCity]);
 
         $db = $this->getDoctrine()->getConnection();
         $query ="
-            SELECT cities.city, fos_user.username, cities.eagerToMeet
-            FROM cities
-            LEFT JOIN fos_user ON cities.user_id = fos_user.id
-            WHERE cities.city = '{$userCity}'
+            SELECT informations.city, fos_user.username, informations.eagerToWorkout
+            FROM informations
+            LEFT JOIN fos_user ON informations.user_id = fos_user.id
+            WHERE informations.city = '{$userCity}'
         ";
 
         $list = $db->query($query)->fetchAll();
@@ -119,9 +118,9 @@ class CitiesController extends Controller
         }
         $userId = $user->getId();
         $entityManager = $this->getDoctrine()->getManager();
-        $City = $entityManager->getRepository(Cities::class)->findOneBy(['user' => $userId]);
+        $Informations = $entityManager->getRepository(Informations::class)->findOneBy(['user' => $userId]);
 
-        if($City == null){
+        if($Informations == null){
             return new Response('<html><body><h3>Nie dodałeś jeszcze miasta i województwa</h3><br><br>
                     <h4>Aby to zrobić<a href="/addCity"><button>Kliknij tutaj</button></a></h4><br><br>
                     <h4>Przejście do panelu użytkownika <a href="/account"><button>Klik</button></a></h4>
@@ -132,14 +131,14 @@ class CitiesController extends Controller
             0 => "NIE",
             1 => "TAK"
         ];
-        $userVoivodeship = $City->getVoivodeship();
+        $userVoivodeship = $Informations->getVoivodeship();
 
         $db = $this->getDoctrine()->getConnection();
         $query ="
-            SELECT cities.city, cities.voivodeship, fos_user.username, cities.eagerToMeet
-            FROM cities
-            LEFT JOIN fos_user ON cities.user_id = fos_user.id
-            WHERE cities.voivodeship = '{$userVoivodeship}'
+            SELECT informations.city, informations.voivodeship, fos_user.username, informations.eagerToWorkout
+            FROM informations
+            LEFT JOIN fos_user ON informations.user_id = fos_user.id
+            WHERE informations.voivodeship = '{$userVoivodeship}'
         ";
 
         $list = $db->query($query)->fetchAll();

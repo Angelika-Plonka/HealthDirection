@@ -8,11 +8,13 @@
         <table class="table">
             {% for elem in names %}
                 {%  set counter = (counter | default(0)) + 1 %}
-                {%  if elem.eagerToMeet == 0 %}
+                {%  if elem.eagerToWorkout == 0 %}
                     <tr>
                         <th>NR</th>
                         <th>LOGIN</th>
-                        <th>CHĘTNY NA SPOTKANIE</th>
+                        <th>CZŁONEK GRUPY TRENINGOWEJ</th>
+                        <th>SZUKA PRZYJAŹNI</th>
+                        <th>SZUKA MIŁOŚCI</th>
                     </tr>
                     <tr>
                         <td>{{ counter }}</td>

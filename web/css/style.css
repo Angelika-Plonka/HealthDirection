@@ -1,3 +1,9 @@
+.content{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 .backgroundImage {
     background: black url("../pictures/background.jpg") no-repeat center/cover;
     height: 100vh;
@@ -35,29 +41,23 @@
 
 #loadedRecipe{
     width: 800px;
-    /*height: 1000px;*/
 }
-.logOut{
-    background: black;
-    color: white;
-    font-size: 1em;
-    font-weight: bold;
-    padding: 0.7em;
-    display: inline-block;
-    margin-left: 92vw;
-    /*border: 1px solid white;*/
-}
-/*div .logOut{*/
+/*.logOut{*/
+    /*background: black;*/
+    /*color: white;*/
+    /*font-size: 1em;*/
+    /*font-weight: bold;*/
+    /*padding: 0.7em;*/
     /*display: inline-block;*/
-    /*margin-left: 80vw;*/
+    /*margin-left: 92vw;*/
 /*}*/
 
 /*#form_biodra{*/
     /*color: red;*/
 /*}*/
 
-.mainBackground {
-    height: 100vh;
+#homepage {
+    height: 90vh;
     width: 100%;
     color: white;
 
@@ -73,10 +73,11 @@
 
 
 
-h1{
-    font-family: "Dancing Script", cursive;
-    font-size: 50px;
+#home{
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
     font-weight: 700;
+    text-align: center;
 }
 /*rgba(255, 255, 255, 0.25);*/
 
@@ -100,8 +101,22 @@ h1{
      max-width: 50vw;
  }
 
+ /*footer*/
+footer .container{
+    height: 40px;
+}
 
-/*.width-min-300px {*/
-    /*width: 100%;*/
-    /*max-width: 300px;*/
-/*}*/
+footer .row{
+    font-weight: bold;
+    padding: 1.5% 40% 1.5% 10%;
+}
+
+footer span{
+    padding-right:3%;
+}
+footer span:nth-of-type(3){
+    font-weight: bold;
+}
+footer .fa{
+    color: white;
+}

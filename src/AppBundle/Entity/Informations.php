@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Cities
+ * Informations
  *
- * @ORM\Table(name="cities")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\CitiesRepository")
+ * @ORM\Table(name="informations")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\InformationsRepository")
  */
-class Cities
+class Informations
 {
     /**
      * @var int
@@ -38,9 +38,23 @@ class Cities
     /**
      * @var bool
      *
+     * @ORM\Column(name="eagerToWorkout", type="boolean")
+     */
+    private $eagerToWorkout;
+
+    /**
+     * @var bool
+     *
      * @ORM\Column(name="eagerToMeet", type="boolean")
      */
     private $eagerToMeet;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="eagerToDate", type="boolean")
+     */
+    private $eagerToDate;
 
     /**
      *
@@ -51,15 +65,6 @@ class Cities
      */
 
     private $user;
-
-//    /**
-//     *
-//     * @var User
-//     *
-//     * @ORM\OneToOne(targetEntity="User", inversedBy="meeting")
-//     *
-//     */
-//    private $client;
 
 
     /**
@@ -77,7 +82,7 @@ class Cities
      *
      * @param string $city
      *
-     * @return Cities
+     * @return Informations
      */
     public function setCity($city)
     {
@@ -101,7 +106,7 @@ class Cities
      *
      * @param string $voivodeship
      *
-     * @return Cities
+     * @return Informations
      */
     public function setVoivodeship($voivodeship)
     {
@@ -119,13 +124,36 @@ class Cities
     {
         return $this->voivodeship;
     }
+    /**
+     * Set eagerToWorkout
+     *
+     * @param boolean $eagerToWorkout
+     *
+     * @return Informations
+     */
+    public function setEagerToWorkout($eagerToWorkout)
+    {
+        $this->eagerToWorkout = $eagerToWorkout;
+
+        return $this;
+    }
+
+    /**
+     * Get eagerToWorkout
+     *
+     * @return bool
+     */
+    public function getEagerToWorkout()
+    {
+        return $this->eagerToWorkout;
+    }
 
     /**
      * Set eagerToMeet
      *
      * @param boolean $eagerToMeet
      *
-     * @return Cities
+     * @return Informations
      */
     public function setEagerToMeet($eagerToMeet)
     {
@@ -142,6 +170,30 @@ class Cities
     public function getEagerToMeet()
     {
         return $this->eagerToMeet;
+    }
+
+    /**
+     * Set eagerToDate
+     *
+     * @param boolean $eagerToDate
+     *
+     * @return Informations
+     */
+    public function setEagerToDate($eagerToDate)
+    {
+        $this->eagerToDate = $eagerToDate;
+
+        return $this;
+    }
+
+    /**
+     * Get eagerToDate
+     *
+     * @return bool
+     */
+    public function getEagerToDate()
+    {
+        return $this->eagerToDate;
     }
 
     /**

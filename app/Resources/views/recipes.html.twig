@@ -2,13 +2,13 @@
 
 {% block body %}
     <div>
-        <h2>Witamy w krainie rozkoszy Twojego podniebienia!</h2>
+        <h2>Witaj w krainie rozkoszy Twojego podniebienia!</h2>
         {% if username %}
-            <h3>Witaj {{ username }}! </h3>
+            {#<h3>Witaj {{ username }}! </h3>#}
             {% if dailyEnergy %}
                 <h4>Twoja dzienna dawka energii to: {{ dailyEnergy }} kcal</h4>
             {%  else %}
-                <h4>Aby wyliczyć swoje zapotrzebowanie energetyczne, uzupełnij swoje wyniki <a href="{{ path('measurements') }}">TUTAJ</a></h4>
+                <h4>{{ username }}, aby wyliczyć swoje zapotrzebowanie energetyczne, uzupełnij swoje wyniki <a href="{{ path('measurements') }}">TUTAJ</a></h4>
             {% endif %}
         {% else %}
             <h4><a href="{{ url('fos_user_registration_register') }}">Zarejestruj się</a>, aby wyliczyć swoje zapotrzebowanie energetyczne,</h4>
@@ -23,11 +23,6 @@
             <input type="number" id="caloriesMax" name="caloriesMax"/><br><br>
             <label>Wpisz JEDEN kluczowy składnik przepisu (po angielsku):</label>
             <input type="text" id="key" name="key" placeholder="np. chicken, chocolate"/><br><br>
-            <label for="alcohol">Posiłek może zawierać alkohol?</label>
-            <select name="alcohol" id="alcohol">
-                <option value="alcohol-free">NIE</option>
-                <option value="0">TAK</option>
-            </select><br>
             <label for="dairy">Posiłek może zawierać nabiał?</label>
             <select name="dairy" id="dairy">
                 <option value="0">TAK</option>
@@ -62,6 +57,11 @@
             <select name="noSugar" id="noSugar">
                 <option value="0">NIE</option>
                 <option value="low-sugar">TAK</option>
+            </select><br>
+            <label for="alcohol">Z alkoholem?</label>
+            <select name="alcohol" id="alcohol">
+                <option value="alcohol-free">NIE</option>
+                <option value="0">TAK</option>
             </select><br>
             <input type="submit" id="send" value="Pobierz przepis">
         </form><br><br>
