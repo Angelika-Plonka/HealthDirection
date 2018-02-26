@@ -41,18 +41,28 @@
                 </div>
                     <label>Chcesz dołączyć do lokalnej grupy treningowej?</label>
                     <select name="eagerToWorkout">
-                        <option value="1">TAK</option>
-                        <option value="0">NIE</option>
+                        <option value="TAK">TAK</option>
+                        <option value="NIE">NIE</option>
                     </select><br>
                     <label>Chętny, aby nawiązać przyjaźń?</label>
                     <select name="eagerToMeet">
-                        <option value="1">TAK</option>
-                        <option value="0">NIE</option>
+                        <option value="TAK">TAK</option>
+                        <option value="NIE">NIE</option>
                     </select><br>
                     <label>Szukasz partnera/partnerki?</label>
                     <select name="eagerToDate">
-                        <option value="1">TAK</option>
-                        <option value="0">NIE</option>
+                        <option value="TAK">TAK</option>
+                        <option value="NIE">NIE</option>
+                    </select><br><br>
+                    <label>Twoja dieta</label>
+                    <select name="diet">
+                        <option value="zbilansowana">zbilansowana</option>
+                        <option value="wegetarianizm">wegetarianizm</option>
+                        <option value="weganizm">weganizm</option>
+                        <option value="witarianizm">witarianizm</option>
+                        <option value="frutarianizm">frutarianizm</option>
+                        <option value="bezglutenowa">bezglutenowa</option>
+                        <option value="inna">inna</option>
                     </select><br><br>
                     <input type="hidden" name="clientId" value="{{ userId }}"/>
                     <button type="submit" class="btn btn-primary">Wyślij formularz</button>

@@ -36,25 +36,32 @@ class Informations
     private $voivodeship;
 
     /**
-     * @var bool
+     * @var string
      *
-     * @ORM\Column(name="eagerToWorkout", type="boolean")
+     * @ORM\Column(name="eagerToWorkout", type="string")
      */
     private $eagerToWorkout;
 
     /**
-     * @var bool
+     * @var string
      *
-     * @ORM\Column(name="eagerToMeet", type="boolean")
+     * @ORM\Column(name="eagerToMeet", type="string")
      */
     private $eagerToMeet;
 
     /**
-     * @var bool
-     *
-     * @ORM\Column(name="eagerToDate", type="boolean")
-     */
+ * @var string
+ *
+ * @ORM\Column(name="eagerToDate", type="string")
+ */
     private $eagerToDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="diet", type="string")
+     */
+    private $diet;
 
     /**
      *
@@ -127,7 +134,7 @@ class Informations
     /**
      * Set eagerToWorkout
      *
-     * @param boolean $eagerToWorkout
+     * @param string $eagerToWorkout
      *
      * @return Informations
      */
@@ -141,7 +148,7 @@ class Informations
     /**
      * Get eagerToWorkout
      *
-     * @return bool
+     * @return string
      */
     public function getEagerToWorkout()
     {
@@ -151,7 +158,7 @@ class Informations
     /**
      * Set eagerToMeet
      *
-     * @param boolean $eagerToMeet
+     * @param string $eagerToMeet
      *
      * @return Informations
      */
@@ -165,7 +172,7 @@ class Informations
     /**
      * Get eagerToMeet
      *
-     * @return bool
+     * @return string
      */
     public function getEagerToMeet()
     {
@@ -175,7 +182,7 @@ class Informations
     /**
      * Set eagerToDate
      *
-     * @param boolean $eagerToDate
+     * @param string $eagerToDate
      *
      * @return Informations
      */
@@ -189,11 +196,35 @@ class Informations
     /**
      * Get eagerToDate
      *
-     * @return bool
+     * @return string
      */
     public function getEagerToDate()
     {
         return $this->eagerToDate;
+    }
+
+    /**
+     * Set diet
+     *
+     * @param string $diet
+     *
+     * @return Informations
+     */
+    public function setDiet($diet)
+    {
+        $this->diet = $diet;
+
+        return $this;
+    }
+
+    /**
+     * Get diet
+     *
+     * @return string
+     */
+    public function getDiet()
+    {
+        return $this->diet;
     }
 
     /**

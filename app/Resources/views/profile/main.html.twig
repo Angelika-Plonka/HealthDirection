@@ -1,18 +1,18 @@
 {%  extends "base.html.twig" %}
 
 {% block body %}
-<div>
+<div class="content">
     <h1>Panel użytkownika</h1>
     <p><a href="{{ path('fos_user_change_password')}}">Zmień hasło</a></p>
 
-    <h3>Witaj {{ username }}!</h3><br>
-    <h4><a href="{{ path('customizeDiet')}}">Twoja dieta</a></h4>
+    <h3>Witaj {{ username }}!</h3>
+    <h3><a href="{{ path('customizeDiet')}}">Twoja dieta</a></h3>
 
-    <h4><a href="{{ path('showMeasurements') }}">Sprawdz swoje wymiary</a></h4>
-    <h4><a href="{{ path('measurements')}}">Aktualizuj swoje wymiary</a></h4>
+    <h3><a href="{{ path('showMeasurements') }}">Sprawdz swoje wymiary</a></h3>
+    <h3><a href="{{ path('measurements')}}">Aktualizuj swoje wymiary</a></h3><br>
 
-    <h3>Użytkownicy z Twojego miasta<a href="{{ path('showUsersInCity')}}"><button>KLIK</button></a>
-    i województwa?<a href="{{ path('showUsersInRegion')}}"><button>KLIK</button></a></h3>
+    <h3>Użytkownicy z Twojego<a href="{{ path('showUsersInCity')}}"><button class="buttonUser">MIASTA</button></a>
+    i <a href="{{ path('showUsersInRegion')}}"><button class="buttonUser">województwa</button></a></h3>
 
 
 </div>

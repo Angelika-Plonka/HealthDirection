@@ -31,7 +31,7 @@ class User extends BaseUser
 
     /**
      *
-     * @var Informations|ArrayCollection
+     * @var Informations
      *
      * @ORM\OneToOne(targetEntity="Informations", mappedBy="user")
      *
@@ -42,7 +42,6 @@ class User extends BaseUser
     public function __construct() {
         parent::__construct();
         $this->measurement = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->region = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 }

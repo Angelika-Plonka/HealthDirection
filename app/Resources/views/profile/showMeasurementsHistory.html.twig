@@ -1,48 +1,47 @@
 {%  extends "base.html.twig" %}
 
 {% block body %}
+    <div class="content calculate1">
+        <h3>Twoje wymiary:</h3>
+        <div>
+            <p><b>Wzrost:</b>{{ height }} cm</p>
+            <p><b>Waga:</b>{{ weight }} kg</p>
+            <p><b>Talia:</b>{{ waist }} cm</p>
+            <p><b>Biodra:</b>{{ hips }} cm</p>
+            <p><b>Brzuch:</b>{{ belly }} cm</p>
+        </div>
+        <p><b>Twoja Całkowita Przemiana Materii (CPM)</b>  {{ dailyEnergy }} kcal/dzień</p>
+        <p>A teraz możesz wybrać właściwy <a href="{{ path('recipes')}}">przepis </a>dla siebie!</p>
 
-    <div class="logOut"><a href="{{ path('fos_user_security_logout') }}">Wyloguj</a></div>
-    <span><a href="{{ path('account') }}">Panel użytkownika</a></span>
+        <p><b>Twoje BMI</b> wynosi: {{ bmi }}</p>
 
-    <div>Twoje wymiary:</div>
-    <div>
-        <p>Wzrost:{{ height }} cm</p>
-        <p>Waga:{{ weight }} kg</p>
-        <p>Talia:{{ waist }} cm</p>
-        <p>Biodra:{{ hips }} cm</p>
-        <p>Brzuch:{{ belly }} cm</p>
-    </div>
+        <p><b>Należna masa ciała</b> na podstawie wzoru Lorentza {{ rightWeight }} kg</p>
 
-    <p>Twoje BMI wynosi: {{ bmi }}</p>
+        {% if  bmi > 25 %}
+            {#<p>Współczynnik WHR stanowi wskaźnik dystrybucji tkanki tłuszczowej w ciele człowieka i jest wyznacznikiem określającym rodzaj sylwetki ciała (sylwetka w kształcie gruszki bądź jabłka) oraz typ otyłości (otyłość brzuszna bądź pośladkowo-udowa). Nie stosuje się go u kobiet w ciąży!.</p>#}
 
-    <p>Należna masa ciała na podstawie wzoru Lorentza {{ rightWeight }} kg</p>
-
-    {% if  bmi > 25 %}
-        <p>Współczynnik WHR stanowi wskaźnik dystrybucji tkanki tłuszczowej w ciele człowieka i jest wyznacznikiem określającym rodzaj sylwetki ciała (sylwetka w kształcie gruszki bądź jabłka) oraz typ otyłości (otyłość brzuszna bądź pośladkowo-udowa). Nie stosuje się go u kobiet w ciąży!.</p>
-        <span>Twój współczynnik WHR wynosi: {{ whr }}</span>
-        {% if sex == "male" %}
-            {% if whr >= "1,00" %}
-            <span>otyłość androidalna - brzuszna (typu 'jabłko') </span>
+            <span>Twój <b>współczynnik WHR </b>wynosi: {{ whr }}</span>
+            {% if sex == "male" %}
+                {% if whr >= "1,00" %}
+                    <span><b>otyłość androidalna</b> - brzuszna (typu 'jabłko') </span>
                 {% else %}
-            <span>otyłość gynoidalną - pośladkowo-udowa (typu 'gruszka')</span>
+                    <span><b>otyłość gynoidalną</b> - pośladkowo-udowa (typu 'gruszka')</span>
                 {%  endif %}
             {%  else %}
                 {% if whr >= "0,80" %}
-                    <span>otyłość androidalna - brzuszna (typu 'jabłko') </span>
+                    <span><b>otyłość androidalna</b> - brzuszna (typu 'jabłko') </span>
                 {% else %}
-                    <span>otyłość gynoidalną - pośladkowo-udowa (typu 'gruszka')</span>
-            {%  endif %}
-        {% endif %}
-    {%  endif %}
+                    <span><b>otyłość gynoidalną</b> - pośladkowo-udowa (typu 'gruszka')</span>
+                {%  endif %}
+            {% endif %}
+        {%  endif %}
 
-    <br><br><div>Procentowa zawartość tkanki tłuszczowej w Twoim organizmie: <span>{{ fat }} % *</span></div>
-    <p>Błąd obliczeń może może wynosić do kilku punktów procentowych (z reguły +/- ~3 %).
-        UWAGA: Wskaźnik ten jest niewiarygodny dla: osób o dużej muskulaturze, sportowców,
-        kobiet przy nadziei (w ciąży), dorastającej młodzieży, osób starszych.</p>
+        <br><br><div><b>Procentowa zawartość tkanki tłuszczowej w Twoim organizmie:</b><span>{{ fat }} % *</span></div>
+        {#<p>#}
+            {#<b>UWAGA:</b> Wskaźnik ten jest niewiarygodny dla: osób o dużej muskulaturze, sportowców, kobiet przy nadziei (w ciąży), dorastającej młodzieży, osób starszych.#}
+        {#</p>#}
+        <br><p>Jeśli chcesz dowiedzieć się więcej o interpretacji wyniku: polecamy artykuł:<br>"<a href="https://www.trener.pl/trening/atrakcyjnosc-fizyczna-a-poziom-tkanki-tluszczowej/" target="_blank"><b>Atrakcyjność fizyczna, a poziom tkanki tłuszczowej"</b></a></p>
+    </div>
 
-    <p>Jeśli chcesz dowiedzieć się więcej o interpretacji wyniku, polecamy artykuł: "<a href="https://www.trener.pl/trening/atrakcyjnosc-fizyczna-a-poziom-tkanki-tluszczowej/" target="_blank">Atrakcyjność fizyczna, a poziom tkanki tłuszczowej"</a></p>
-
-    <h4>Twoja Całkowita Przemiana Materii (CPM)  {{ dailyEnergy }} kcal/dzień</h4>
 
 {% endblock %}

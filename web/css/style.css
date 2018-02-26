@@ -86,6 +86,37 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842', GradientType=0 );
 }
 
+/*showMeasurementsHistory*/
+.calculate{
+    font-size: 16px;
+    height: 100vh;
+    width: 100%;
+    background: rgba(212,228,239,1);
+    background: -moz-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(212,228,239,1)), color-stop(90%, rgba(134,174,204,1)), color-stop(100%, rgba(134,174,204,1)));
+    background: -webkit-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
+    background: -o-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
+    background: -ms-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
+    background: linear-gradient(to right, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#86aecc', GradientType=1 );
+}
+
+.calculate1{
+    background-image: url("../pictures/sport.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 700px 100px;
+}
+
+.diet{
+    background: black url("../pictures/build.jpg") no-repeat center/cover;
+    height: 90vh;
+    width: 100%;
+    color: white;
+}
+
+
+
 /*portalDescription*/
 .portalDescription{
     background: black url("../pictures/portalDescription.jpg") no-repeat center/cover;
@@ -135,8 +166,10 @@
 
 .backgroundForm {
     background: black url("../pictures/diet.jpeg") no-repeat center/cover;
-    height: 100vh;
+    height: 90vh;
     width: 100%;
+    font-size: 15px;
+    line-height: 27px;
 }
 
 
@@ -182,38 +215,20 @@ input#send:hover{
 #loadedRecipe{
     width: 800px;
 }
-/*.logOut{*/
-    /*background: black;*/
-    /*color: white;*/
-    /*font-size: 1em;*/
-    /*font-weight: bold;*/
-    /*padding: 0.7em;*/
-    /*display: inline-block;*/
-    /*margin-left: 92vw;*/
-/*}*/
 
-/*#form_biodra{*/
-    /*color: red;*/
-/*}*/
-
-
-
-
-/*rgba(255, 255, 255, 0.25);*/
-
-.main {
-
+/*ACCOUNT*/
+.account{
+    background: black url("../pictures/profileBackground.jpg") no-repeat center/cover;
     height: 100vh;
     width: 100%;
-    background: rgba(212,228,239,1);
-    background: -moz-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(212,228,239,1)), color-stop(90%, rgba(134,174,204,1)), color-stop(100%, rgba(134,174,204,1)));
-    background: -webkit-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
-    background: -o-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
-    background: -ms-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
-    background: linear-gradient(to right, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#86aecc', GradientType=1 );
+}
 
+.buttonUser{
+    background: pink;
+    color: black;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
 }
 
  /*footer*/

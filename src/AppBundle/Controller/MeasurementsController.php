@@ -101,8 +101,8 @@ class MeasurementsController extends Controller
         }
         return $this->render('profile/addMeasurements.html.twig', array(
             'username' => $username,
-            'form' => $formView,
             'page' => $page,
+            'form' => $formView,
             'err' => $errorMsg
         ));
     }
@@ -125,7 +125,14 @@ class MeasurementsController extends Controller
                     <h4>Aby to zrobić<a href="/account/addMeasurements"><button>Kliknij tutaj</button></a></h4><br><br>
                     <h4>Przejście do panelu użytkownika <a href="/account"><button>Klik</button></a></h4>
                     </body></html>');
+//            return $this->render('profile/addMeasurements.html.twig', array(
+//                'username' => $User,
+//                'page' => $page,
+//                'err' => $errorMsg
+//            ));
         }
+
+
         $weight = $User->getWeight();
         $height = $User->getHeight();
         $waist = $User->getWaist();

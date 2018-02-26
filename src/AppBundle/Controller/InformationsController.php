@@ -37,10 +37,11 @@ class InformationsController extends Controller
             $eagerToWorkout= $request->get('eagerToWorkout');
             $eagerToMeet= $request->get('eagerToMeet');
             $eagerToDate= $request->get('eagerToDate');
+            $diet= $request->get('diet');
             $entityManager = $this->getDoctrine()->getManager();
-            $User = $entityManager->getRepository(User::class)->findOneBy(['id' => $userId]);
+//            $User = $entityManager->getRepository(User::class)->findOneBy(['id' => $userId]);
 
-            if ($User === NULL) {
+            if ($user === NULL) {
                 $errorMsg = 'Niestety nie udało sie wysłać formularza.';
             }
             else{
@@ -50,7 +51,8 @@ class InformationsController extends Controller
                 $location->setEagerToWorkout($eagerToWorkout);
                 $location->setEagerToMeet($eagerToMeet);
                 $location->setEagerToDate($eagerToDate);
-                $location->setUser($User);
+                $location->setDiet($diet);
+                $location->setUser($user);
                 $entityManager->persist($location);
                 $entityManager->flush();
                 return $this->redirectToRoute("showUsersInRegion");
@@ -85,16 +87,12 @@ class InformationsController extends Controller
                     </body></html>');
         }
 
-        $eagerToMeet = [
-            0 => "NIE",
-            1 => "TAK"
-        ];
         $userCity = $Informations->getCity();
 //        $friendsCity = $entityManager->getRepository(Informations::class)->findBy(['city' => $userCity]);
 
         $db = $this->getDoctrine()->getConnection();
         $query ="
-            SELECT informations.city, fos_user.username, informations.eagerToWorkout, informations.eagerToMeet, informations.eagerToDate
+            SELECT informations.city, fos_user.username, informations.eagerToWorkout, informations.eagerToMeet, informations.eagerToDate, informations.diet
             FROM informations
             LEFT JOIN fos_user ON informations.user_id = fos_user.id
             WHERE informations.city = '{$userCity}'
@@ -105,7 +103,6 @@ class InformationsController extends Controller
 
         return $this->render('profile/showUsersInCity.html.twig', array(
             'page' => $page,
-            'eager' => $eagerToMeet,
             'names' => $list
         ));
     }
@@ -131,15 +128,11 @@ class InformationsController extends Controller
                     </body></html>');
         }
 
-        $eagerToMeet = [
-            0 => "NIE",
-            1 => "TAK"
-        ];
         $userVoivodeship = $Informations->getVoivodeship();
 
         $db = $this->getDoctrine()->getConnection();
         $query ="
-            SELECT informations.city, informations.voivodeship, fos_user.username, informations.eagerToWorkout
+            SELECT informations.city, informations.voivodeship, fos_user.username, informations.eagerToWorkout,informations.eagerToMeet, informations.eagerToDate, informations.diet
             FROM informations
             LEFT JOIN fos_user ON informations.user_id = fos_user.id
             WHERE informations.voivodeship = '{$userVoivodeship}'
@@ -150,7 +143,6 @@ class InformationsController extends Controller
 
         return $this->render('profile/showUsersInRegion.html.twig', array(
             'page' => $page,
-            'eager' => $eagerToMeet,
             'names' => $list
         ));
     }

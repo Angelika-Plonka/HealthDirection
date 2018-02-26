@@ -2,41 +2,31 @@
 
 {% block body %}
 
-    <div class="panel panel-default">
+    <div class="panel panel-default content">
         <div class="panel-heading"><h3>Lista użytkowników z Twojego miasta</h3></div>
 
         <table class="table">
             {% for elem in names %}
                 {%  set counter = (counter | default(0)) + 1 %}
-                {%  if elem.eagerToWorkout == 0 %}
                     <tr>
                         <th>NR</th>
                         <th>LOGIN</th>
                         <th>CZŁONEK GRUPY TRENINGOWEJ</th>
-                        {#{%  if elem.eagerToMeet == 0 %}#}
                         <th>SZUKA PRZYJAŹNI</th>
                         <th>SZUKA PARTNERA</th>
+                        <th>DIETA</th>
                     </tr>
                     <tr>
                         <td>{{ counter }}</td>
                         <td><a href="#">{{ elem.username }}</a></td>
-                        <td>{{ eager[0] }}</td>
+                        <td>{{ elem.eagerToWorkout }}</td>
+                        <td>{{ elem.eagerToMeet }}</td>
+                        <td>{{ elem.eagerToDate }}</td>
+                        <td>{{ elem.diet }}</td>
                     </tr>
 
-                {% else %}
-                    <tr>
-                        <th>NR</th>
-                        <th>LOGIN</th>
-                        <th>CHĘTNY NA SPOTKANIE</th>
-                    </tr>
-                    <tr>
-                        <td>{{ counter }}</td>
-                        <td><a href="#">{{ elem.username }}</a></td>
-                        <td>{{ eager[1] }}</td>
-                    </tr>
-                {% endif %}
             {% endfor %}
-        </table>
+        </table><br><br>
         <h4>Jeśli chcesz nawiązać kontakt, kliknij w login użytkownika</h4>
     </div>
 

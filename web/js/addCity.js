@@ -27,10 +27,10 @@ function getLocation() {
                 $("#voivodeship").val(results.results[0].address_components[4].long_name);
             }
             function blockOtherFieldsWhenButtonIsClicked() {
-                $('#cityToBlock').prop('disabled', true);
-                $('#voivodeshipToBlock').prop('disabled', true);
-                $('#voivodeship').prop('disabled', false);
-                $('#city').prop('disabled', false);
+                $('#cityToBlock').attr('disabled', true);
+                $('#voivodeshipToBlock').attr('disabled', true);
+                $('#voivodeship').attr('disabled', false);
+                $('#city').attr('disabled', false);
             }
         });
     }

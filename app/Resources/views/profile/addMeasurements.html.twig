@@ -2,20 +2,17 @@
 
 {% block body %}
 
-    <div>
+    <div class="content">
+                <div class="lighter">
+                    <h2>Witaj {{ username }}</h2>
+                    <h4>Wypełnij formularz, aby dopasować dla siebie odpowiednią dietę i zestaw ćwiczeń!</h4>
+                    {{ form(form) }}
+                </div>
+
+        {#{% endif %}#}
         {% if err %}
             <h2 style="color: #FF0000;">{{ err }}</h2>
         {% endif %}
 
-        {#<div class="logOut"><a href="{{ path('fos_user_security_logout') }}">Wyloguj</a></div>#}
-        <div class="lighter">
-            <h2>Witaj {{ username }}</h2>
-
-            <h4>Wypełnij formularz, aby dopasować dla siebie odpowiednią dietę i zestaw ćwiczeń!</h4>
-            {{ form(form) }}
-
-        </div>
-
     </div>
-
 {%  endblock %}
