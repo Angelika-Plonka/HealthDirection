@@ -1,4 +1,7 @@
-/*HOMEPAGE*/
+/*GENERAL STYLING*/
+.lighter{
+    background: rgba(255, 255, 255, 0.45);
+}
 
 .content{
     width: 100%;
@@ -6,6 +9,26 @@
     margin: 0 auto;
 }
 
+/*REGISTRATION, LOGIN*/
+.RegistrationBackground {
+    background: black url("../pictures/background.jpg") no-repeat center/cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.logForm{
+    border-radius: 10px;
+    padding: 5%;
+    color: black;
+    text-align: center;
+}
+
+.eternity-form {
+    max-width: 30vw;
+}
+
+
+/*HOMEPAGE*/
 #homepage {
     height: 90vh;
     width: 100%;
@@ -18,6 +41,10 @@
     background: -ms-linear-gradient(top, rgba(7,84,69,1) 0%, rgba(7,84,69,1) 16%, rgba(34,99,86,1) 65%, rgba(51,113,100,1) 100%);
     background: linear-gradient(to bottom, rgba(7,84,69,1) 0%, rgba(7,84,69,1) 16%, rgba(34,99,86,1) 65%, rgba(51,113,100,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#075445', endColorstr='#337164', GradientType=0 );
+}
+
+.overriting{
+    padding-left: 100px;
 }
 
 .lighterMainSite{
@@ -60,14 +87,51 @@
 }
 
 /*portalDescription*/
-
-
-
-.backgroundImage {
-    background: black url("../pictures/background.jpg") no-repeat center/cover;
+.portalDescription{
+    background: black url("../pictures/portalDescription.jpg") no-repeat center/cover;
     height: 100vh;
     width: 100%;
+    color: black;
 }
+#portal{
+    font-size: 22px;
+    text-align: center;
+    padding: 2%;
+}
+
+#portalHeader{
+    font-family: 'Merriweather', serif;
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 32px
+}
+
+/*addInformations*/
+#info{
+    max-width: 1100px;
+}
+
+.addInformations {
+    background: black url("../pictures/friends.jpg") no-repeat center/cover;
+    /*height: 100vh;*/
+    height: 90vh;
+    width: 100%;
+    font-size: 18px;
+    line-height: 200%;
+    /*line-height: 24px;*/
+    color: black;
+}
+
+.formLighter{
+    background: rgba(255, 255, 255, 0.35);
+    width: 45vw;
+    /*padding: 0, 25px, 10px, 35px;*/
+    padding: 10px 25px 10px 35px;
+    /*padding: 35px;*/
+}
+
+
 
 .backgroundForm {
     background: black url("../pictures/diet.jpeg") no-repeat center/cover;
@@ -75,27 +139,44 @@
     width: 100%;
 }
 
-.addCity {
-    background: black url("../pictures/friends.jpg") no-repeat center/cover;
-    height: 100vh;
+
+/*RECIPES*/
+.recipes{
+    height: 90vh;
     width: 100%;
+    font-size: 15px;
+    line-height: 24px;
+    background: rgba(212,228,239,1);
+    background: -moz-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(212,228,239,1)), color-stop(90%, rgba(134,174,204,1)), color-stop(100%, rgba(134,174,204,1)));
+    background: -webkit-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
+    background: -o-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
+    background: -ms-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
+    background: linear-gradient(to right, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#86aecc', GradientType=1 );
 }
+
+input#send{
+    color: black;
+    background: deepskyblue;
+    font-weight: bold;
+}
+input#send:hover{
+    background: cadetblue;
+}
+
+.food{
+    background-image: url("../pictures/food.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 800px 0;
+}
+
+
 
 .mark{
     background: rgba(255, 255, 255, 0.55);
     width: 40vw;
-}
-
-.lighter{
-    background: rgba(255, 255, 255, 0.45);
-}
-
-.change{
-    color: black;
-    /*background: #DBE9EA;*/
-    background: rgba(255, 255, 255, 0.35);
-    display: inline;
-    padding: 30px;
 }
 
 #loadedRecipe{
@@ -121,9 +202,8 @@
 /*rgba(255, 255, 255, 0.25);*/
 
 .main {
-    /*background: black url("../pictures/background1.jpg") no-repeat center/cover;*/
+
     height: 100vh;
-    /*height: 100%;*/
     width: 100%;
     background: rgba(212,228,239,1);
     background: -moz-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
@@ -133,16 +213,8 @@
     background: -ms-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
     background: linear-gradient(to right, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 90%, rgba(134,174,204,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#86aecc', GradientType=1 );
+
 }
-
- .eternity-form {
-     padding: 15vh 5vh 5vw 5vw;
-     max-width: 50vw;
- }
-
- .overriting{
-     padding-left: 100px;
- }
 
  /*footer*/
 footer.position{

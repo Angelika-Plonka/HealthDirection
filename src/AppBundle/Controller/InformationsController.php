@@ -17,11 +17,11 @@ class InformationsController extends Controller
 {
 
     /**
-     * @Route("/addCity", name="city");
+     * @Route("/addInformations", name="informations");
      */
-    public function addCityAction(Request $request)
+    public function addInformationsAction(Request $request)
     {
-        $page = "addCity";
+        $page = "addInformations";
         $username = $this->getUser();
         $user = $this->getUser();
         if (!is_object($user) || !$user instanceof UserInterface) {
@@ -34,7 +34,9 @@ class InformationsController extends Controller
         if($request->get('clientId') !== NULL && $request->get('city') !== "" && $request->get('voivodeship') !== ""){
             $city= $request->get('city');
             $voivodeship= $request->get('voivodeship');
-            $meet= $request->get('meet');
+            $eagerToWorkout= $request->get('eagerToWorkout');
+            $eagerToMeet= $request->get('eagerToMeet');
+            $eagerToDate= $request->get('eagerToDate');
             $entityManager = $this->getDoctrine()->getManager();
             $User = $entityManager->getRepository(User::class)->findOneBy(['id' => $userId]);
 
@@ -45,7 +47,9 @@ class InformationsController extends Controller
                 $location = new Informations();
                 $location->setCity($city);
                 $location->setVoivodeship($voivodeship);
-                $location->setEagerToWorkout($meet);
+                $location->setEagerToWorkout($eagerToWorkout);
+                $location->setEagerToMeet($eagerToMeet);
+                $location->setEagerToDate($eagerToDate);
                 $location->setUser($User);
                 $entityManager->persist($location);
                 $entityManager->flush();
@@ -53,7 +57,7 @@ class InformationsController extends Controller
             }
         }
 
-        return $this->render('profile/addCity.html.twig', array(
+        return $this->render('profile/addInformations.html.twig', array(
             'page' => $page,
             'username' => $username,
             'userId' => $userId,
@@ -76,7 +80,7 @@ class InformationsController extends Controller
 
         if($Informations == null){
             return new Response('<html><body><h3>Nie dodałeś jeszcze miasta</h3><br><br>
-                    <h4>Aby to zrobić<a href="/addCity"><button>Kliknij tutaj</button></a></h4><br><br>
+                    <h4>Aby to zrobić<a href="/addInformations"><button>Kliknij tutaj</button></a></h4><br><br>
                     <h4>Przejście do panelu użytkownika <a href="/account"><button>Klik</button></a></h4>
                     </body></html>');
         }
@@ -90,7 +94,7 @@ class InformationsController extends Controller
 
         $db = $this->getDoctrine()->getConnection();
         $query ="
-            SELECT informations.city, fos_user.username, informations.eagerToWorkout
+            SELECT informations.city, fos_user.username, informations.eagerToWorkout, informations.eagerToMeet, informations.eagerToDate
             FROM informations
             LEFT JOIN fos_user ON informations.user_id = fos_user.id
             WHERE informations.city = '{$userCity}'
@@ -122,7 +126,7 @@ class InformationsController extends Controller
 
         if($Informations == null){
             return new Response('<html><body><h3>Nie dodałeś jeszcze miasta i województwa</h3><br><br>
-                    <h4>Aby to zrobić<a href="/addCity"><button>Kliknij tutaj</button></a></h4><br><br>
+                    <h4>Aby to zrobić<a href="/addInformations"><button>Kliknij tutaj</button></a></h4><br><br>
                     <h4>Przejście do panelu użytkownika <a href="/account"><button>Klik</button></a></h4>
                     </body></html>');
         }

@@ -36,7 +36,6 @@ class UserController extends Controller
      */
     public function recipesAction(Request $request)
     {
-
         $page = "recipes";
         $user = false;
         $loadDailyEnergyRequirements = false;

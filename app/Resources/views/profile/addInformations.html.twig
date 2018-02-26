@@ -2,22 +2,18 @@
 
 {% block body %}
 
-    <div class="container">
-        <div>
+    <div id="info" class="content">
             {% if err %}
                 <h2 style="color: red;">{{ err }}</h2>
             {% endif %}
-            {#<div class="logOut"><a href="{{ path('fos_user_security_logout') }}">Wyloguj</a></div>#}
-            <h1 class="change"> {{ username }}, wyszukaj znajomych w Twojej okolicy!</h1><br><br><br>
 
-            <form method="POST" class="mark">
-                <h3>Wpisz swoje miasto lub pobierz lokalizację</h3><br>
+            <form method="POST" class="formLighter">
+                <h3><b> {{ username }}</b>, dodaj informacje o sobie!</h3>
+                <h4>Wpisz swoje miasto lub pobierz lokalizację</h4>
                 <div class="row">
                     <label>Twoje miasto</label><br>
-                    <input type="text" id="cityToBlock" name="city" placeholder="nazwa miasto"/>
-                </div><br>
+                    <input type="text" id="cityToBlock" name="city" placeholder="nazwa miasto"/><br>
 
-                <div class="row">
                     <label>Twoje województwo</label><br>
                     <select name="voivodeship" id="voivodeshipToBlock">
                         <option value="">wybierz</option>
@@ -37,26 +33,31 @@
                         <option value="śląskie">śląskie</option>
                         <option value="świętokrzyskie">świętokrzyskie</option>
                         <option value="warmińsko-mazurskie">warmińsko-mazurskie</option>
-                    </select>
-                </div><br><br>
+                    </select><br>
                 <div id="checkLocation">
-                    <p>Pobierz swoją lokalizację:
-                        <span id="cityVal"></span><input type="hidden" id="city" name="city" value="" disabled/>
-                        <span id="voivodeshipVal"></span><input type="hidden" id="voivodeship" name="voivodeship" value="" disabled/>
-                    </p><br>
-                    <button id="check" onclick="getLocation(); return false;">KLIK</button>
+                    <p>Pobierz swoją lokalizację: <button id="check" onclick="getLocation(); return false;">KLIK</button>
+                    <span id="cityVal"></span><input type="hidden" id="city" name="city" value="" disabled/>
+                        <span id="voivodeshipVal"></span><input type="hidden" id="voivodeship" name="voivodeship" value="" disabled/></p>
                 </div>
-                <div class="row">
-                    <label>Chcesz dołączyć do lokalnej grupy treningowej?</label><br>
-                    <select name="meet">
+                    <label>Chcesz dołączyć do lokalnej grupy treningowej?</label>
+                    <select name="eagerToWorkout">
                         <option value="1">TAK</option>
                         <option value="0">NIE</option>
-                    </select>
-                </div><br><br>
-                <input type="hidden" name="clientId" value="{{ userId }}"/>
-                <button type="submit" class="btn btn-primary">Wyślij</button>
+                    </select><br>
+                    <label>Chętny, aby nawiązać przyjaźń?</label>
+                    <select name="eagerToMeet">
+                        <option value="1">TAK</option>
+                        <option value="0">NIE</option>
+                    </select><br>
+                    <label>Szukasz partnera/partnerki?</label>
+                    <select name="eagerToDate">
+                        <option value="1">TAK</option>
+                        <option value="0">NIE</option>
+                    </select><br><br>
+                    <input type="hidden" name="clientId" value="{{ userId }}"/>
+                    <button type="submit" class="btn btn-primary">Wyślij formularz</button>
+                </div>
             </form>
-        </div>
         <script src="{{ asset('js/addCity.js') }}"></script>
     </div>
 

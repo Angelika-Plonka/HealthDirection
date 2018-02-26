@@ -41,21 +41,11 @@ class GeneralController extends Controller
      */
     public function portalDescriptionAction()
     {
-        $page = "portal";
+        $page = "portalDescription";
         return $this->render('portalDescription.html.twig', array(
             'page' => $page
         ));
     }
 
-    /**
-     * @Route("/about", name="about");
-     */
-    public function aboutAction(Request $request)
-    {
-        $page = "about";
-        return $this->render('about.html.twig', array(
-            'page' => $page
-        ));
-    }
 
 }

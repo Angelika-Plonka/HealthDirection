@@ -18,12 +18,16 @@
         id="homepage"
     {% elseif page == 'account' %}
         class="main"
+    {% elseif page == 'portalDescription' %}
+        class="portalDescription"
+    {% elseif page == 'recipes' %}
+        class="recipes"
     {% elseif page == 'build' %}
         class="build"
     {% elseif page == 'addMeasurements' %}
         class="backgroundForm"
-    {% elseif page == 'addCity' %}
-        class="addCity"
+    {% elseif page == 'addInformations' %}
+        class="addInformations"
 
     {% endif %} >
             <nav class="navbar navbar-inverse">
@@ -44,13 +48,12 @@
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="/recipes">PRZEPISY <span class="sr-only">(current)</span></a></li>
                             <li><a href="{{ url('portalDescription') }}">O PORTALU</a></li>
-                            <li><a href="{{ url('userStories') }}">INSPIRACJA</a></li>
+                            <li><a href="{{ url('userStories') }}">INSPIRACJE</a></li>
                             <li><a href="{{ url('speedDating') }}">SPEED DATING</a></li>
 
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="{{ url('about') }}">O autorce</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">KONTO UŻYTKOWNIKA <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
