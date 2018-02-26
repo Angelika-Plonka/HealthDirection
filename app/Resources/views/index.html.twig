@@ -3,7 +3,6 @@
 {% block body %}
     <div class="content">
         <h1 id="home">Z nami smacznie zjesz, zadbasz o swoje ciało i poznasz bratnią duszę!</h1>
-        {#<h1 id="home">Witam na portalu zrzeszającym ludzi dbających o swoje ciało i umysł!</h1>#}
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -14,26 +13,35 @@
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="../pictures/ana5.jpg" alt="11111111">
-                    <div class="carousel-caption">
-                        <h2>Na spróbowanie</h2>
+                <div class="item active overriting">
+                    <img src="../pictures/recipes.jpg" alt="recipes">
+                    <div class="carousel-caption lighterMainSite">
+                        <h3>W naszej bazie jest ponad 2 miliony <a id="speed" href="{{ path('recipes')}}" target="_blank">przepisów!</a></h3>
+                        <h3>I Ty znajdziesz coś dla siebie!</h3>
                     </div>
                 </div>
-                <div class="item">
-                    <img src="../pictures/ana5.jpg" alt="2222">
-                    <div class="carousel-caption">
-                        <span>A co mi tam !</span>
-                        <p>Jeszcze w zielone gramy!</p>
+                <div class="item overriting">
+                    <img src="../pictures/speedDating.jpg" alt="speed dating">
+                    <div class="carousel-caption lighterMainSite">
+                        <h3>Specjalnie dla Ciebie: tematyczne <a id="speed" href="{{ path('speedDating')}}" target="_blank">speed dating!</a></h3>
+                        <h4 id="speedAfter"><b>wegetarianin? weganin? witarianin? frutarianin?</b> A może <b>gluten-free?</b></h4>
+                        <h4>Pomożemy Ci znaleźć <b>kompatybilnego</b> partnera!</h4>
                     </div>
                 </div>
-                {#<div class="item">#}
-                    {#<img src="../pictures/community.jpeg" alt="333">#}
-                    {#<div class="carousel-caption">#}
-                        {#<span>A co mi tam !</span>#}
-                        {#<p>Jeszcze w zielone gramy!</p>#}
-                    {#</div>#}
-                {#</div>#}
+                <div class="item overriting">
+                    <img src="../pictures/workout.jpeg" alt="workout">
+                    <div class="carousel-caption lighterMainSite">
+                        <h3>W grupie raźniej!</h3>
+                        <h3><a id="speed" href="{{ path('fos_user_registration_register')}}" target="_blank">Zarejestruj się</a> i dołącz do lokalnej grupy treningowej!</h3>
+                    </div>
+                </div>
+                <div class="item overriting">
+                    <img src="../pictures/inspiration.jpg" alt="inspiration stories">
+                    <div class="carousel-caption lighterMainSite">
+                        <h3>Daj się zainspirować!</h3>
+                        <h3><a id="speed" href="{{ path('fos_user_registration_register')}}" target="_blank">Historie</a> użytkowników, którzy zmienili swoje życie!</h3>
+                    </div>
+                </div>
             </div>
 
             <!-- Controls -->
@@ -45,8 +53,8 @@
                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
-        </div>
-        <footer>
+        </div><br>
+        <footer class="content position">
                 <span>2018</span>
                 <span><a href="https://github.com/Angelika-Plonka" class="fa fa-github fa-2x" aria-hidden="true" target="blank"></a></span>
                 <span> Angelika Płonka </span>

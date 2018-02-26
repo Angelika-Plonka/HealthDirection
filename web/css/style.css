@@ -1,8 +1,67 @@
+/*HOMEPAGE*/
+
 .content{
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
 }
+
+#homepage {
+    height: 90vh;
+    width: 100%;
+    color: white;
+    background: rgba(7,84,69,1);
+    background: -moz-linear-gradient(top, rgba(7,84,69,1) 0%, rgba(7,84,69,1) 16%, rgba(34,99,86,1) 65%, rgba(51,113,100,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(7,84,69,1)), color-stop(16%, rgba(7,84,69,1)), color-stop(65%, rgba(34,99,86,1)), color-stop(100%, rgba(51,113,100,1)));
+    background: -webkit-linear-gradient(top, rgba(7,84,69,1) 0%, rgba(7,84,69,1) 16%, rgba(34,99,86,1) 65%, rgba(51,113,100,1) 100%);
+    background: -o-linear-gradient(top, rgba(7,84,69,1) 0%, rgba(7,84,69,1) 16%, rgba(34,99,86,1) 65%, rgba(51,113,100,1) 100%);
+    background: -ms-linear-gradient(top, rgba(7,84,69,1) 0%, rgba(7,84,69,1) 16%, rgba(34,99,86,1) 65%, rgba(51,113,100,1) 100%);
+    background: linear-gradient(to bottom, rgba(7,84,69,1) 0%, rgba(7,84,69,1) 16%, rgba(34,99,86,1) 65%, rgba(51,113,100,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#075445', endColorstr='#337164', GradientType=0 );
+}
+
+.lighterMainSite{
+    padding-top: 0;
+    background: rgba(255, 255, 255, 0.35);
+    color: black;
+}
+#home{
+    font-family: 'Merriweather', serif;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+#speed{
+    color: #0000F0;
+}
+#speed:hover{
+    text-decoration: none;
+    color: #0D3349;
+}
+
+#speedAfter{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+/*speedDating, userStories*/
+.build{
+    height: 90vh;
+    background: rgba(210,255,82,1);
+    background: -moz-linear-gradient(top, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 55%, rgba(145,232,66,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(210,255,82,1)), color-stop(55%, rgba(145,232,66,1)), color-stop(100%, rgba(145,232,66,1)));
+    background: -webkit-linear-gradient(top, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 55%, rgba(145,232,66,1) 100%);
+    background: -o-linear-gradient(top, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 55%, rgba(145,232,66,1) 100%);
+    background: -ms-linear-gradient(top, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 55%, rgba(145,232,66,1) 100%);
+    background: linear-gradient(to bottom, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 55%, rgba(145,232,66,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842', GradientType=0 );
+}
+
+/*portalDescription*/
+
+
 
 .backgroundImage {
     background: black url("../pictures/background.jpg") no-repeat center/cover;
@@ -56,29 +115,9 @@
     /*color: red;*/
 /*}*/
 
-#homepage {
-    height: 90vh;
-    width: 100%;
-    color: white;
-
-    background: rgba(7,84,69,1);
-    background: -moz-linear-gradient(top, rgba(7,84,69,1) 0%, rgba(7,84,69,1) 16%, rgba(34,99,86,1) 65%, rgba(51,113,100,1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(7,84,69,1)), color-stop(16%, rgba(7,84,69,1)), color-stop(65%, rgba(34,99,86,1)), color-stop(100%, rgba(51,113,100,1)));
-    background: -webkit-linear-gradient(top, rgba(7,84,69,1) 0%, rgba(7,84,69,1) 16%, rgba(34,99,86,1) 65%, rgba(51,113,100,1) 100%);
-    background: -o-linear-gradient(top, rgba(7,84,69,1) 0%, rgba(7,84,69,1) 16%, rgba(34,99,86,1) 65%, rgba(51,113,100,1) 100%);
-    background: -ms-linear-gradient(top, rgba(7,84,69,1) 0%, rgba(7,84,69,1) 16%, rgba(34,99,86,1) 65%, rgba(51,113,100,1) 100%);
-    background: linear-gradient(to bottom, rgba(7,84,69,1) 0%, rgba(7,84,69,1) 16%, rgba(34,99,86,1) 65%, rgba(51,113,100,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#075445', endColorstr='#337164', GradientType=0 );
-}
 
 
 
-#home{
-    font-family: 'Merriweather', serif;
-    font-size: 30px;
-    font-weight: 700;
-    text-align: center;
-}
 /*rgba(255, 255, 255, 0.25);*/
 
 .main {
@@ -101,14 +140,16 @@
      max-width: 50vw;
  }
 
- /*footer*/
-footer .container{
-    height: 40px;
-}
+ .overriting{
+     padding-left: 100px;
+ }
 
-footer .row{
+ /*footer*/
+footer.position{
     font-weight: bold;
-    padding: 1.5% 40% 1.5% 10%;
+    height: 30px;
+    padding-left: 30vw;
+    /*padding: 1.5% 40% 1.5% 10%;*/
 }
 
 footer span{

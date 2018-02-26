@@ -18,6 +18,8 @@
         id="homepage"
     {% elseif page == 'account' %}
         class="main"
+    {% elseif page == 'build' %}
+        class="build"
     {% elseif page == 'addMeasurements' %}
         class="backgroundForm"
     {% elseif page == 'addCity' %}
@@ -41,9 +43,9 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="/recipes">PRZEPISY <span class="sr-only">(current)</span></a></li>
-                            <li><a href="/portalDescription">O PORTALU</a></li>
-                            <li><a href="#">MOTYWACJA</a></li>
-                            <li><a href="#">SPEED DATING</a></li>
+                            <li><a href="{{ url('portalDescription') }}">O PORTALU</a></li>
+                            <li><a href="{{ url('userStories') }}">INSPIRACJA</a></li>
+                            <li><a href="{{ url('speedDating') }}">SPEED DATING</a></li>
 
                         </ul>
 
