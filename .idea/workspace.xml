@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e39a67d1-fef6-4138-bb59-fef91f9f2a37" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/profile/addInformations.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/profile/addInformations.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/profile/addMeasurements.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/profile/addMeasurements.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/profile/customizeDiet.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/profile/customizeDiet.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/profile/main.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/profile/main.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/profile/showMeasurementsHistory.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/profile/showMeasurementsHistory.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/profile/showUsersInCity.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/profile/showUsersInCity.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/profile/showUsersInRegion.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/profile/showUsersInRegion.html.twig" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/InformationsController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/InformationsController.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/MeasurementsController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/MeasurementsController.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Informations.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Informations.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
-      <change beforePath="$PROJECT_DIR$/web/css/style.css" afterPath="$PROJECT_DIR$/web/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/web/js/addCity.js" afterPath="$PROJECT_DIR$/web/js/addCity.js" />
-    </list>
+    <list default="true" id="e39a67d1-fef6-4138-bb59-fef91f9f2a37" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -484,7 +468,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="75" y="16" width="1303" height="780" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.009223674" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
