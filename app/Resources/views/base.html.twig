@@ -14,26 +14,8 @@
         <script src="{{ asset('bootstrap-3.3.7/dist/js/bootstrap.js') }}"></script>
     </head>
 
-    <body {% if page == 'homepage' %}
-        id="homepage"
-    {% elseif page == 'account' %}
-        class="account"
-    {% elseif page == 'calculate' %}
-        class="calculate"
-    {% elseif page == 'diet' %}
-        class="diet"
-    {% elseif page == 'portalDescription' %}
-        class="portalDescription"
-    {% elseif page == 'recipes' %}
-        class="recipes"
-    {% elseif page == 'build' %}
-        class="build"
-    {% elseif page == 'addMeasurements' %}
-        class="backgroundForm"
-    {% elseif page == 'addInformations' %}
-        class="addInformations"
+    <body class="{{ page }}">
 
-    {% endif %} >
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -71,6 +53,15 @@
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
+
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="flash-{{ label }}" style="text-align: center;">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+
             {% block body %}
         {% endblock %}
         {% block javascripts %}{% endblock %}

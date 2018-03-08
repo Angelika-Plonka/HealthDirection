@@ -64,7 +64,8 @@ class MeasurementsController extends Controller
             ->add('Wyślij', SubmitType::class)
             ->getForm();
 
-        $formView = $form->createView();
+//        $form = $form->createView();
+        $form->handleRequest($request);
         $data = $request->request->get('form');
         $errorMsg = FALSE;
 
@@ -79,30 +80,36 @@ class MeasurementsController extends Controller
                 $errorMsg = 'Niestety nie udało sie wysłać formularza.';
             }
             else{
-                $addParameters->setAge($data['age']);
-                $addParameters->setActivity($data['activity']);
-                $addParameters->setBelly($data['belly']);
-                $addParameters->setHeight($data['height']);
-                $addParameters->setBicep($data['bicep']);
-                $addParameters->setSex($data['sex']);
-                $addParameters->setWaist($data['waist']);
-                $addParameters->setWeight($data['weight']);
-                $addParameters->setHips($data['hips']);
-                $addParameters->setChest($data['chest']);
-                $addParameters->setPerson($Person);
+                if ($form->isSubmitted() && $form->isValid()) {
+                    $addParameters->setAge($data['age']);
+                    $addParameters->setActivity($data['activity']);
+                    $addParameters->setBelly($data['belly']);
+                    $addParameters->setHeight($data['height']);
+                    $addParameters->setBicep($data['bicep']);
+                    $addParameters->setSex($data['sex']);
+                    $addParameters->setWaist($data['waist']);
+                    $addParameters->setWeight($data['weight']);
+                    $addParameters->setHips($data['hips']);
+                    $addParameters->setChest($data['chest']);
+                    $addParameters->setPerson($Person);
 
-                $entityManager->persist($addParameters);
-                $entityManager->flush();
-                return new Response('<html><body><h2>Twoje pomiary zostały zapisane poprawnie.</h2><br><br>
-                    <h4>Aby wyświetlić wyniki swoich pomiarów <a href="/showMeasurements"><button>Kliknij tutaj</button></a></h4><br><br>
-                    <h4>Przejście do panelu użytkownika <a href="/account"><button>Kliknij tutaj</button></a></h4>
-                    </body></html>');
+                    $entityManager->persist($addParameters);
+                    $entityManager->flush();
+                    $this->addFlash(
+                        'notice',
+                        'Twoje wymiary zostały zapisane!'
+                    );
+                    return $this->redirectToRoute('showMeasurements');
+                }
+                else{
+                    $errorMsg = 'Niestety nie udało sie wysłać formularza.';
+                }
             }
         }
         return $this->render('profile/addMeasurements.html.twig', array(
             'username' => $username,
             'page' => $page,
-            'form' => $formView,
+            'form' => $form->createView(),
             'err' => $errorMsg
         ));
     }
@@ -119,18 +126,10 @@ class MeasurementsController extends Controller
         }
         $userId = $user->getId();
         $entityManager = $this->getDoctrine()->getManager();
-        $User = $entityManager->getRepository(Measurements::class)->findBy(['person' => $userId], ['dateAdded' => 'DESC'])[0];
-        if($User == null){
-            return new Response('<html><body><h3>Nie dodałeś jeszcze wymiarów</h3><br><br>
-                    <h4>Aby to zrobić<a href="/account/addMeasurements"><button>Kliknij tutaj</button></a></h4><br><br>
-                    <h4>Przejście do panelu użytkownika <a href="/account"><button>Klik</button></a></h4>
-                    </body></html>');
-//            return $this->render('profile/addMeasurements.html.twig', array(
-//                'username' => $User,
-//                'page' => $page,
-//                'err' => $errorMsg
-//            ));
+        if($entityManager->getRepository(Measurements::class)->findOneBy(['person' => $userId]) == null){
+            return $this->redirectToRoute('measurements');
         }
+        $User = $entityManager->getRepository(Measurements::class)->findBy(['person' => $userId], ['dateAdded' => 'DESC'])[0];
 
 
         $weight = $User->getWeight();

@@ -33,7 +33,7 @@ class Measurements
     /**
      * @var datetime
      *
-     * @ORM\Column(name="date_added", type="datetime", options={"default"="CURRENT_TIMESTAMP"}, nullable=true)
+     * @ORM\Column(name="date_added", type="datetime", options={"default"="CURRENT_TIMESTAMP"})
      */
     private $dateAdded;
 
