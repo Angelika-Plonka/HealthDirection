@@ -1,7 +1,7 @@
 # HealthDirection
 ===============
 
-This is my first authoring application created in Symfony 3.3 - is still under construction.
+This is my first authoring application created in Symfony 3.3
 
 Health Direction is a portal designed for people interested in healthy lifestyle. 
 Everybody can find a recipe according to their daily energy requirements as well as respecting their food allergies and different diets like vegan, vegetarian, kosher, paleo, gluten-free, dairy free, diabetic etc.
