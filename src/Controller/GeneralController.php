@@ -5,9 +5,9 @@ namespace App\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\User;
-use AppBundle\Entity\Informations;
-use AppBundle\Entity\Measurements;
+use App\Entity\User;
+use App\Entity\Informations;
+use App\Entity\Measurements;
 use FOS\UserBundle\Model\UserInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
