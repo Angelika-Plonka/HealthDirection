@@ -4,10 +4,6 @@ namespace App\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
-use App\Entity\User;
-use App\Entity\Informations;
-use App\Entity\Measurements;
 use FOS\UserBundle\Model\UserInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
@@ -17,7 +13,7 @@ class GeneralController extends Controller
     /**
      * @Route("/", name="homepage");
      */
-    public function homeAction()
+    public function home()
     {
         $page = "homepage";
         return $this->render('index.html.twig', array(
@@ -28,7 +24,7 @@ class GeneralController extends Controller
     /**
      * @Route("/speedDating", name="speedDating");
      */
-    public function speedDatingAction()
+    public function speedDating()
     {
         $page = "build";
         return $this->render('speedDating.html.twig', array(
@@ -39,7 +35,7 @@ class GeneralController extends Controller
     /**
      * @Route("/portalDescription", name="portalDescription");
      */
-    public function portalDescriptionAction()
+    public function portalDescription()
     {
         $page = "portalDescription";
         return $this->render('portalDescription.html.twig', array(

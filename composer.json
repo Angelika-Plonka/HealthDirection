@@ -8,10 +8,11 @@
         "doctrine/doctrine-bundle": "^1.10",
         "doctrine/orm": "^2.6",
         "friendsofsymfony/user-bundle": "^2.1",
+        "knplabs/doctrine-behaviors": "^1.6",
         "sensio/framework-extra-bundle": "^5.2",
         "symfony/asset": "4.2.*",
         "symfony/console": "4.2.*",
-        "symfony/dotenv": "4.2.*",
+        "symfony/debug": "4.2.*",
         "symfony/flex": "^1.1",
         "symfony/framework-bundle": "4.2.*",
         "symfony/swiftmailer-bundle": "^3.2",
@@ -65,6 +66,10 @@
         }
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.1",
+        "symfony/dotenv": "4.2.*",
+        "symfony/maker-bundle": "^1.11",
+        "symfony/profiler-pack": "^1.0",
         "symfony/web-server-bundle": "4.2.*"
     }
 }

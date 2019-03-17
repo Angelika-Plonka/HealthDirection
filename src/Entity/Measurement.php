@@ -3,15 +3,18 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 
 /**
- * Measurements
+ * Measurement
  *
- * @ORM\Table(name="measurements")
- * @ORM\Entity(repositoryClass="App\Repository\MeasurementsRepository")
+ * @ORM\Table(name="measurement")
+ * @ORM\Entity(repositoryClass="App\Repository\MeasurementRepository")
  */
-class Measurements
+class Measurement
 {
+
+    use ORMBehaviors\Timestampable\Timestampable;
 
     /**
      * @var int
@@ -29,13 +32,15 @@ class Measurements
      * @ORM\Column(name="weight", type="float", nullable=true)
      */
     private $weight;
+//
+//    /**
+//     * @var datetime
+//     *
+//     * @ORM\Column(name="date_added", type="datetime", options={"default"="CURRENT_TIMESTAMP"})
+//     */
+//    private $dateAdded;
 
-    /**
-     * @var datetime
-     *
-     * @ORM\Column(name="date_added", type="datetime", options={"default"="CURRENT_TIMESTAMP"})
-     */
-    private $dateAdded;
+
 
 
     /**
@@ -157,7 +162,7 @@ class Measurements
      * Set weight
      *
      * @param float $weight
-     * @return Measurements
+     * @return Measurement
      */
     public function setWeight($weight)
     {
@@ -180,7 +185,7 @@ class Measurements
      * Set height
      *
      * @param integer $height
-     * @return Measurements
+     * @return Measurement
      */
     public function setHeight($height)
     {
@@ -203,7 +208,7 @@ class Measurements
      * Set age
      *
      * @param integer $age
-     * @return Measurements
+     * @return Measurement
      */
     public function setAge($age)
     {
@@ -226,7 +231,7 @@ class Measurements
      * Set sex
      *
      * @param string $sex
-     * @return Measurements
+     * @return Measurement
      */
     public function setSex($sex)
     {
@@ -250,7 +255,7 @@ class Measurements
      * Set waist
      *
      * @param float $waist
-     * @return Measurements
+     * @return Measurement
      */
     public function setWaist($waist)
     {
@@ -273,7 +278,7 @@ class Measurements
      * Set hips
      *
      * @param float $hips
-     * @return Measurements
+     * @return Measurement
      */
     public function setHips($hips)
     {
@@ -296,7 +301,7 @@ class Measurements
      * Set belly
      *
      * @param float $belly
-     * @return Measurements
+     * @return Measurement
      */
     public function setBelly($belly)
     {
@@ -319,7 +324,7 @@ class Measurements
      * Set bmi
      *
      * @param float $bmi
-     * @return Measurements
+     * @return Measurement
      */
     public function setBmi($bmi)
     {
@@ -342,7 +347,7 @@ class Measurements
      * Set activity
      *
      * @param float $activity
-     * @return Measurements
+     * @return Measurement
      */
     public function setActivity($activity)
     {
@@ -365,7 +370,7 @@ class Measurements
      * Set dailyEnergyRequirements
      *
      * @param integer $dailyEnergyRequirements
-     * @return Measurements
+     * @return Measurement
      */
     public function setDailyEnergyRequirements($dailyEnergyRequirements)
     {
@@ -388,7 +393,7 @@ class Measurements
      * Set rightWeight
      *
      * @param integer $rightWeight
-     * @return Measurements
+     * @return Measurement
      */
     public function setRightWeight($rightWeight)
     {
@@ -430,34 +435,34 @@ class Measurements
         return $this->person;
     }
 
-    /**
-     * Set dateAdded
-     *
-     * @param datetime $dateAdded
-     * @return Measurements
-     */
-    public function setDateAdded($dateAdded)
-    {
-        $this->dateAdded = $dateAdded;
-
-        return $this;
-    }
-
-    /**
-     * Get dateAdded
-     *
-     * @return datetime
-     */
-    public function getDateAdded()
-    {
-        return $this->dateAdded;
-    }
+//    /**
+//     * Set dateAdded
+//     *
+//     * @param datetime $dateAdded
+//     * @return Measurement
+//     */
+//    public function setDateAdded($dateAdded)
+//    {
+//        $this->dateAdded = $dateAdded;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get dateAdded
+//     *
+//     * @return datetime
+//     */
+//    public function getDateAdded()
+//    {
+//        return $this->dateAdded;
+//    }
 
     /**
      * Set fat
      *
      * @param float $fat
-     * @return Measurements
+     * @return Measurement
      */
     public function setFat($fat)
     {
@@ -480,7 +485,7 @@ class Measurements
      * Set bicep
      *
      * @param integer $bicep
-     * @return Measurements
+     * @return Measurement
      */
     public function setBicep($bicep)
     {
@@ -503,7 +508,7 @@ class Measurements
      * Set chest
      *
      * @param integer $chest
-     * @return Measurements
+     * @return Measurement
      */
     public function setChest($chest)
     {
@@ -526,7 +531,7 @@ class Measurements
      * Set whr
      *
      * @param float $whr
-     * @return Measurements
+     * @return Measurement
      */
     public function setWhr($whr)
     {

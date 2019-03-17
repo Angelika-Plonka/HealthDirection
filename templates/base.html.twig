@@ -10,61 +10,62 @@
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap-3.3.7/dist/css/bootstrap.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}"/>
-        <script src="{{ asset('jquery-3.3.1.min.js') }}"></script>
-        <script src="{{ asset('bootstrap-3.3.7/dist/js/bootstrap.js') }}"></script>
     </head>
 
     <body class="{{ page }}">
 
-            <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="/">GŁÓWNA</a>
-                    </div>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">GŁÓWNA</a>
+                </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="/recipes">PRZEPISY <span class="sr-only">(current)</span></a></li>
-                            <li><a href="{{ url('portalDescription') }}">O PORTALU</a></li>
-                            <li><a href="{{ url('userStories') }}">INSPIRACJE</a></li>
-                            <li><a href="{{ url('speedDating') }}">SPEED DATING</a></li>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/recipes">PRZEPISY <span class="sr-only">(current)</span></a></li>
+                        <li><a href="{{ url('portalDescription') }}">O PORTALU</a></li>
+                        <li><a href="{{ url('userStories') }}">INSPIRACJE</a></li>
+                        <li><a href="{{ url('speedDating') }}">SPEED DATING</a></li>
 
-                        </ul>
+                    </ul>
 
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">KONTO UŻYTKOWNIKA <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ url('account') }}">Moje konto</a></li>
-                                    <li><a href="{{ url('fos_user_registration_register') }}">Zarejestruj się</a></li>
-                                    <li><a href="{{ url('fos_user_security_login') }}">Zaloguj się</a></li>
-                                    <li><a href="{{ url('fos_user_security_logout') }}">Wyloguj się</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">KONTO UŻYTKOWNIKA <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ url('account') }}">Moje konto</a></li>
+                                <li><a href="{{ url('fos_user_registration_register') }}">Zarejestruj się</a></li>
+                                <li><a href="{{ url('fos_user_security_login') }}">Zaloguj się</a></li>
+                                <li><a href="{{ url('fos_user_security_logout') }}">Wyloguj się</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
 
-            {% for label, messages in app.flashes %}
-                {% for message in messages %}
-                    <div class="flash-{{ label }}" style="text-align: center;">
-                        {{ message }}
-                    </div>
-                {% endfor %}
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="flash-{{ label }}" style="text-align: center;">
+                    {{ message }}
+                </div>
             {% endfor %}
+        {% endfor %}
 
-            {% block body %}
+        {% block body %}
         {% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('jquery-3.3.1.min.js') }}"></script>
+            <script src="{{ asset('bootstrap-3.3.7/dist/js/bootstrap.js') }}"></script>
+        {% endblock %}
 
     </body>
 </html>

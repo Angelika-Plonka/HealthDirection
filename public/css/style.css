@@ -144,12 +144,12 @@
     margin-bottom: 32px
 }
 
-/*addInformations*/
+/*addInformation*/
 #info{
     max-width: 1100px;
 }
 
-.addInformations {
+.addInformation {
     background: black url("../pictures/friends.jpg") no-repeat center/cover;
     /*height: 100vh;*/
     height: 90vh;

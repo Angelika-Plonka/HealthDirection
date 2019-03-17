@@ -1,0 +1,32 @@
+message:
+    wrong_choice: "Wybierz poprawną opcję"
+
+basic_information:
+    activity:
+        label: "Aktywność fizyczna"
+        scale_1: "niska - sporadyczna aktywność fizyczna"
+        scale_2: "aktywność fizyczna umiarkowana"
+        scale_3: "aktywny tryb życia"
+        scale_4: "bardzo aktywny tryb życia"
+        scale_5: "wyczynowe uprawianie sportu"       
+    sex:
+        f: "kobieta"
+        m: "mężczyzna"
+    diet:
+        balanced: "zbilansowana"
+        vegetarianism: "wegetarianizm"
+        veganism: "weganizm"
+        raw_foodism: "witarianizm"
+        fruitarianism: "frutarianizm"
+        gluten_free: "bezglutenowa"
+        paleo: "paleo"
+        customized: "zindywidualizowana"    
+    
+location:
+    field:
+        city: "miasto"
+        voivodeship: "województwo"
+        eager_to_workout: "rozgrzewka"
+        eager_to_meet: "chętny na spotkanie"
+        eager_to_date: "chętny na randkę"
+    

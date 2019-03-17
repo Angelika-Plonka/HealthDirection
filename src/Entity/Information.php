@@ -5,12 +5,12 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Informations
+ * Information
  *
- * @ORM\Table(name="informations")
- * @ORM\Entity(repositoryClass="App\Repository\InformationsRepository")
+ * @ORM\Table(name="information")
+ * @ORM\Entity(repositoryClass="App\Repository\InformationRepository")
  */
-class Informations
+class Information
 {
     /**
      * @var int
@@ -63,15 +63,15 @@ class Informations
      */
     private $diet;
 
-    /**
-     *
-     * @var User
-     *
-     * @ORM\OneToOne(targetEntity="User", inversedBy="region")
-     *
-     */
-
-    private $user;
+//    /**
+//     *
+//     * @var User
+//     *
+//     * @ORM\OneToOne(targetEntity="User", inversedBy="region")
+//     *
+//     */
+//
+//    private $user;
 
 
     /**
@@ -89,7 +89,7 @@ class Informations
      *
      * @param string $city
      *
-     * @return Informations
+     * @return Information
      */
     public function setCity($city)
     {
@@ -113,7 +113,7 @@ class Informations
      *
      * @param string $voivodeship
      *
-     * @return Informations
+     * @return Information
      */
     public function setVoivodeship($voivodeship)
     {
@@ -136,7 +136,7 @@ class Informations
      *
      * @param string $eagerToWorkout
      *
-     * @return Informations
+     * @return Informatio
      */
     public function setEagerToWorkout($eagerToWorkout)
     {
@@ -160,7 +160,7 @@ class Informations
      *
      * @param string $eagerToMeet
      *
-     * @return Informations
+     * @return Information
      */
     public function setEagerToMeet($eagerToMeet)
     {
@@ -184,7 +184,7 @@ class Informations
      *
      * @param string $eagerToDate
      *
-     * @return Informations
+     * @return Information
      */
     public function setEagerToDate($eagerToDate)
     {
@@ -208,7 +208,7 @@ class Informations
      *
      * @param string $diet
      *
-     * @return Informations
+     * @return Information
      */
     public function setDiet($diet)
     {
@@ -227,29 +227,29 @@ class Informations
         return $this->diet;
     }
 
-    /**
-     * Set user
-     *
-     * @param $user
-     *
-     * @return $this
-     */
-
-    public function setUser(User $user) {
-
-        $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * Get user
-     *
-     * @return User
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
+//    /**
+//     * Set user
+//     *
+//     * @param $user
+//     *
+//     * @return $this
+//     */
+//
+//    public function setUser(User $user) {
+//
+//        $this->user = $user;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get user
+//     *
+//     * @return User
+//     */
+//    public function getUser()
+//    {
+//        return $this->user;
+//    }
 }
 

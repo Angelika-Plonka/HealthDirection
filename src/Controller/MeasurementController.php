@@ -6,7 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\User;
-use App\Entity\Measurements;
+use App\Entity\Measurement;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
@@ -16,15 +16,15 @@ use FOS\UserBundle\Model\UserInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
-class MeasurementsController extends Controller
+class MeasurementController extends Controller
 {
 
     /**
-     * @Route("/account/addMeasurements", name="measurements");
+     * @Route("/account/addMeasurement", name="measurement");
      */
-    public function addMeasurementsAction(Request $request)
+    public function addMeasurement(Request $request)
     {
-        $page = "addMeasurements";
+        $page = "addMeasurement";
         $username = $this->getUser();
         $user = $this->getUser();
         if (!is_object($user) || !$user instanceof UserInterface) {
@@ -32,7 +32,7 @@ class MeasurementsController extends Controller
         }
         $userId = $user->getId();
 
-        $addParameters = new Measurements();
+        $addParameters = new Measurement();
         $entityManager = $this->getDoctrine()->getManager();
         $form = $this->createFormBuilder()
             ->add('weight', TextType::class, array('label' => 'Wpisz masę ciała [kg]'))
@@ -64,7 +64,6 @@ class MeasurementsController extends Controller
             ->add('Wyślij', SubmitType::class)
             ->getForm();
 
-//        $form = $form->createView();
         $form->handleRequest($request);
         $data = $request->request->get('form');
         $errorMsg = FALSE;
@@ -126,10 +125,11 @@ class MeasurementsController extends Controller
         }
         $userId = $user->getId();
         $entityManager = $this->getDoctrine()->getManager();
-        if($entityManager->getRepository(Measurements::class)->findOneBy(['person' => $userId]) == null){
-            return $this->redirectToRoute('measurements');
+        if($entityManager->getRepository(Measurement::class)->findOneBy(['person' => $userId]) == null){
+            return $this->redirectToRoute('measurement');
         }
-        $User = $entityManager->getRepository(Measurements::class)->findBy(['person' => $userId], ['dateAdded' => 'DESC'])[0];
+//        $User = $entityManager->getRepository(Measurement::class)->findBy(['person' => $userId], ['dateAdded' => 'DESC'])[0];
+        $User = $entityManager->getRepository(Measurement::class)->findBy(['person' => $userId], ['createdAt' => 'DESC'])[0];
 
 
         $weight = $User->getWeight();

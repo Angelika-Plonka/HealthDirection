@@ -67,10 +67,11 @@
                     <input type="hidden" name="clientId" value="{{ userId }}"/>
                     <button type="submit" class="btn btn-primary">Wyślij formularz</button>
                 </div>
-            </form>
-        <script src="{{ asset('js/addCity.js') }}"></script>
+            </form>       
     </div>
 
+{% endblock %}
 
-
+{% block javascripts %}
+    <script src="{{ asset('js/addCity.js') }}"></script>
 {% endblock %}
