@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lista pomiarów{% endblock %}
+
+{% block body %}
+    <div class="ml-3 mr-3 mb-3 mt-3">
+        <div class="col-sm-5 mt-4">
+            <div class="float-right">
+                <a class="btn button-new" href="{{ path('fitness_new') }}">
+                    <span class="mdi mdi-plus" aria-hidden="true"></span> nowy pomiar
+                </a>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-condensed">
+                <thead>
+                    <tr>
+                        <th scope="col">{{ 'field.number'|trans }}</th>
+                        <th scope="col">{{ 'field.created_at'|trans }}</th>              
+                        <th scope="col">{{ 'fitness.field.weight'|trans }}</th>
+                        <th scope="col">{{ 'fitness.field.height'|trans }}</th>
+                        <th scope="col">{{ 'fitness.field.bmi'|trans }}</th>
+                        <th scope="col">{{ 'fitness.field.belly'|trans }}</th>
+                        <th scope="col">{{ 'fitness.field.hips'|trans }}</th>
+                        <th scope="col">{{ 'fitness.field.waist'|trans }}</th>                   
+                        <th scope="col">{{ 'fitness.field.bicep'|trans }}</th>
+                        <th scope="col">{{ 'fitness.field.chest'|trans }}</th>
+                        <th scope="col">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for fitness in fitness_measurements %}
+                        {%  set counter = (counter | default(0)) + 1 %}
+                        <tr>
+                            <td>{{ counter }}</td>                           
+                            <td>{% if fitness.createdAt %} {{ fitness.createdAt|date('Y-m-d H:i') }} {% else %} &nbsp; {% endif %}</td>
+                            <td>{{ fitness.weight }}</td>
+                            <td>{{ fitness.height }}</td>
+                            <td> <a href="{{ path('fitness_edit', { 'id': fitness.id }) }}" data-toggle="tooltip" title="Edycja pomiaru">{{ fitness.bmi }}</a></td>
+                            <td>{{ fitness.belly }}</td>
+                            <td>{{ fitness.hips }}</td>
+                            <td>{{ fitness.waist }}</td>
+                            <td>{{ fitness.bicep }}</td>
+                            <td>{{ fitness.chest }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>  
+    </div>
+{% endblock %}

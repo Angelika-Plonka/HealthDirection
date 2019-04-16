@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nowy pomiar{% endblock %}
+
+{% block body %}
+    <div class="row mt-3">
+        <div class="offset-7 col-sm-5 hidden-print mb-3">
+            <div class="text-right">
+                <a class="btn button-back" href="{{ path('fitness_index') }}">
+                    <span class="mdi mdi-view-list" aria-hidden="true"></span> powrót
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {{ include('fitness/_form.html.twig') }}
+
+{% endblock %}

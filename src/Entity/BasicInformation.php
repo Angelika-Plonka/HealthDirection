@@ -23,15 +23,6 @@ class BasicInformation
     const SEX_F = 'F';
 
     /**
-     * ACTIVITY SCALE
-     */
-    const ACTIVITY_SCALE_1 = '1.4';
-    const ACTIVITY_SCALE_2 = '1.75';
-    const ACTIVITY_SCALE_3 = '2';
-    const ACTIVITY_SCALE_4 = '2.2';
-    const ACTIVITY_SCALE_5 = '2.4';
-
-    /**
      * TYPE OF DIETS
      */
     const DIET_BALANCED = 'balanced';
@@ -48,17 +39,6 @@ class BasicInformation
         return [
             'basic_information.sex.m' => self::SEX_M,
             'basic_information.sex.f' => self::SEX_F
-        ];
-    }
-
-    public static function getTypeActivity(): array
-    {
-        return [
-            'basic_information.activity.scale_1' => self::ACTIVITY_SCALE_1,
-            'basic_information.activity.scale_2' => self::ACTIVITY_SCALE_2,
-            'basic_information.activity.scale_3' => self::ACTIVITY_SCALE_3,
-            'basic_information.activity.scale_4' => self::ACTIVITY_SCALE_4,
-            'basic_information.activity.scale_5' => self::ACTIVITY_SCALE_5
         ];
     }
 
@@ -84,11 +64,8 @@ class BasicInformation
     private $id;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $height;
-
-    /**
+     * @var string
+     *
      * @ORM\Column(type="string", length=1)
      * @Assert\Choice(callback="getTypeOfSex", message="message.wrong_choice")
      * @Assert\NotBlank()
@@ -96,18 +73,23 @@ class BasicInformation
     private $sex;
 
     /**
+     * @var \DateTime
+     *
      * @ORM\Column(type="date")
+     * @Assert\Date()
      * @Assert\NotBlank()
+     * @Assert\Range(
+     *      min = "-110 years",
+     *      max = "-5 years",
+     * 		minMessage = "You must be less than 110 years old.",
+     * 		maxMessage = "You must be at least 10 years old."
+     * )
      */
     private $birthday;
 
     /**
-     * @ORM\Column(type="string", length=5, nullable=true)
-     * @Assert\Choice(callback="getTypeActivity", message="message.wrong_choice")
-     */
-    private $activity;
-
-    /**
+     * @var string
+     * 
      * @ORM\Column(type="string", length=25, nullable=true)
      * @Assert\Choice(callback="getTypeDiet", message="message.wrong_choice")
      */
@@ -123,18 +105,6 @@ class BasicInformation
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getHeight(): ?int
-    {
-        return $this->height;
-    }
-
-    public function setHeight(?int $height): self
-    {
-        $this->height = $height;
-
-        return $this;
     }
 
     /**
@@ -188,31 +158,6 @@ class BasicInformation
         }
 
         return $this->getBirthday()->diff(new \DateTime('today'))->y;
-    }
-
-    public function getActivity(): ?string
-    {
-        return $this->activity;
-    }
-
-    public function getActivityTranslate(): ?string
-    {
-        return ToolsProvider::getKeyFromFlippedArray($this->activity, self::getTypeActivity());
-    }
-
-    /**
-     * @param string $activity
-     * @return \self
-     * @throws \Exception
-     */
-    public function setActivity(?string $activity): self
-    {
-        if (!in_array($activity, self::getTypeActivity())) {
-            throw new \Exception('Błędny typ aktywności: ' . $activity);
-        }
-        $this->activity = $activity;
-
-        return $this;
     }
 
     public function getDiet(): ?string

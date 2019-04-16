@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Podgląd pomiaru{% endblock %}
+
+{% block body %}
+    <div class="ml-3 mr-3 mb-3 mt-3">
+        <div class="col-sm-5 mt-4">
+            <div class="float-right">
+                <a class="btn button-new" href="{{ path('fitness_new') }}">
+                    <span class="mdi mdi-plus" aria-hidden="true"></span> nowy pomiar
+                </a>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-condensed">
+                <tbody>
+                    <tr>
+                        <th scope="col">{{ 'field.created_at'|trans }}</th>
+                        <td>{% if fitness.createdAt %} {{ fitness.createdAt|date('Y-m-d H:i') }} {% else %} &nbsp; {% endif %}</td>                        
+                    </tr>
+                    <tr>
+                        <th scope="col">{{ 'fitness.field.weight'|trans }}</th>
+                        <td>{{ fitness.weight }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">{{ 'fitness.field.height'|trans }}</th>
+                        <td>{{ fitness.height }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">{{ 'fitness.field.bmi'|trans }}</th>
+                        <td>
+                            <a href="{{ path('fitness_edit', { 'id': fitness.id }) }}" data-toggle="tooltip" title="Edycja pomiaru">{{ fitness.bmi }}</a>
+                        </td>               
+                    </tr>
+                    <tr>
+                        <th scope="col">{{ 'fitness.field.belly'|trans }}</th>
+                        <td>{{ fitness.belly }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">{{ 'fitness.field.hips'|trans }}</th>
+                        <td>{{ fitness.hips }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">{{ 'fitness.field.waist'|trans }}</th>
+                        <td>{{ fitness.waist }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">{{ 'fitness.field.bicep'|trans }}</th>
+                        <td>{{ fitness.bicep }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">{{ 'fitness.field.chest'|trans }}</th>
+                        <td>{{ fitness.chest }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">{{ 'fitness.activity.label'|trans }}</th>
+                        <td>{{ fitness.activityTranslate|trans }}</td>
+                    </tr>                                      
+                </tbody>
+            </table>
+        </div>  
+    </div>
+{% endblock %}

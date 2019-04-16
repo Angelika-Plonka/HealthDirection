@@ -1,14 +1,11 @@
 message:
     wrong_choice: "Wybierz poprawną opcję"
+    
+field:
+    number: "nr"
+    created_at: "Data utworzenia"
 
-basic_information:
-    activity:
-        label: "Aktywność fizyczna"
-        scale_1: "niska - sporadyczna aktywność fizyczna"
-        scale_2: "aktywność fizyczna umiarkowana"
-        scale_3: "aktywny tryb życia"
-        scale_4: "bardzo aktywny tryb życia"
-        scale_5: "wyczynowe uprawianie sportu"       
+basic_information:   
     sex:
         f: "kobieta"
         m: "mężczyzna"
@@ -21,7 +18,26 @@ basic_information:
         gluten_free: "bezglutenowa"
         paleo: "paleo"
         customized: "zindywidualizowana"    
-    
+
+fitness:
+    field:
+        bmi: "bmi"
+        date: "data pomiaru"
+        weight: "masa ciała"
+        height: "wzrost"
+        belly: "obwód w pasie [cm]"
+        hips: "obwód bioder [cm]"
+        waist: "szerokość talii [cm]"
+        bicep: "obwód bicepsa [cm]"
+        chest: "obwód klatki piersiowej [cm]"   
+    activity:
+        label: "aktywność fizyczna"
+        scale_1: "niska - sporadyczna aktywność fizyczna"
+        scale_2: "aktywność fizyczna umiarkowana"
+        scale_3: "aktywny tryb życia"
+        scale_4: "bardzo aktywny tryb życia"
+        scale_5: "wyczynowe uprawianie sportu"                      
+                    
 location:
     field:
         city: "miasto"
